@@ -1,0 +1,16 @@
+{
+  "name": "@repo/eslint-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@vercel/style-guide": "6.0.0",
+    "eslint-config-turbo": "2.0.12"
+  }
+}
