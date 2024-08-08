@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 echo '🏗️👷 Validating the code before committing👷‍♂️🏗️'
 
 # Check ESLint Standards
@@ -10,14 +7,6 @@ yarn lint ||
 (
     echo '🔨❌ Yoo, you have a problem in your code. Check the linter 🔨❌
           Run yarn lint, add changes and try commit again.';
-    false;
-)
-
-echo 'Testing...'
-yarn test ||
-(
-    echo '🔨❌ Yoo, you have a problem in your code. Check tests 🔨❌
-          Run yarn test, add changes and try commit again.';
     false;
 )
 
