@@ -4,7 +4,6 @@
     "esbenp.prettier-vscode",
     "Orta.vscode-jest",
     "bradlc.vscode-tailwindcss",
-    "stylelint.vscode-stylelint",
     "unifiedjs.vscode-mdx",
     "editorconfig.editorconfig"
   ]

@@ -1,0 +1,72 @@
+---
+title: "Getting Started with Next.js and MDX"
+date: "2024-08-08"
+author: "Your Name"
+tags: ["Next.js", "MDX", "Web Development"]
+---
+
+# Getting Started with Next.js and MDX
+
+Welcome to my first article! Today, we're going to explore the powerful combination of Next.js and MDX.
+
+## What is Next.js?
+
+Next.js is a React framework that enables functionality such as server-side rendering and generating static websites. It's a popular choice for building modern web applications.
+
+## What is MDX?
+
+MDX allows you to use JSX in your markdown content. It's a powerful way to add dynamic content and components to your otherwise static markdown.
+
+### Here's a simple example:
+
+```jsx
+function Highlight({ children }) {
+  return <span style={{ backgroundColor: "yellow" }}>{children}</span>;
+}
+
+This is a <Highlight>highlighted text</Highlight> using a custom React component.
+```
+
+## Why use Next.js with MDX?
+
+1. **Server-side rendering**: Next.js can render MDX content on the server, improving performance and SEO.
+2. **Static site generation**: You can pre-render MDX pages at build time.
+3. **Dynamic imports**: Easily import and use React components in your markdown.
+
+## Code Example
+
+Here's a simple React component written in JSX:
+
+```jsx
+import React from "react";
+
+const Greeting = ({ name }) => {
+  return <h1>Hello, {name}!</h1>;
+};
+
+export default Greeting;
+```
+
+## Interactive Component
+
+Here's an example of an interactive component in MDX:
+
+import { useState } from "react";
+
+export const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+
+<Counter />
+
+## Conclusion
+
+Next.js and MDX provide a powerful toolset for creating dynamic, content-driven websites. With the ability to mix markdown and React components, you can create rich, interactive content easily.
+
+Happy coding!
