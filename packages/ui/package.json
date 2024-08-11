@@ -1,0 +1,26 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "eslint --fix \"src/**/*.ts*\"",
+    "code-format": "prettier ./src --write",
+    "generate:component": "turbo gen react-component"
+  },
+  "dependencies": {
+    "react": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-custom": "*",
+    "prettier": "3.3.3",
+    "prettier-config-custom": "*",
+    "tsconfig": "*",
+    "typescript": "5.5.4"
+  }
+}

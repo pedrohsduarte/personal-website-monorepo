@@ -1,8 +1,0 @@
-{
-  "**/*.{js,mjs,ts,tsx,md,mdx}": [
-    "turbo run lint --",
-    "prettier --check --write"
-  ],
-  "**/*.css": ["stylelint --allow-empty-input", "prettier --write"],
-  "**/*.{json,yml}": ["prettier --check --write"]
-}

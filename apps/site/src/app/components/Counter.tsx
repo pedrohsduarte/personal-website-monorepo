@@ -1,16 +1,22 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, {useState} from 'react';
 
-const Counter = () => {
+function Counter() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        Increment
+      </button>
     </div>
   );
-};
+}
 
 export default Counter;

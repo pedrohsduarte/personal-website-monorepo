@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import React from 'react';
 
 interface Experience {
   startDate: string;
@@ -14,29 +14,22 @@ interface ExperienceTimelineProps {
   experiences: Experience[];
 }
 
-const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
-  experiences,
-}) => {
+const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({experiences}) => {
   return (
-    <div className="relative">
+    <div className='relative'>
       {experiences.map((exp, index) => (
-        <div key={index} className="mb-6 flex flex-row  ">
-          <div className="flex flex-col items-center">
+        <div key={index} className='flex flex-row'>
+          <div className='flex flex-col items-center'>
             {/* Logo */}
-            <div
-              className="relative flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-zinc-800
-           border-2 border-gray-100 z-10 flex items-center justify-center overflow-hidden"
-            >
-              <div className="relative w-6 h-6">
-                {" "}
-                {/* Smaller container for the image */}
+            <div className='relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-gray-100 bg-white dark:bg-zinc-800'>
+              <div className='relative h-6 w-6'>
                 <Image
                   src={exp.logo}
                   alt={`${exp.companyName} logo`}
                   fill
-                  sizes="2rem"
+                  sizes='2rem'
                   style={{
-                    objectFit: "contain",
+                    objectFit: 'contain',
                   }}
                 />
               </div>
@@ -44,22 +37,20 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
 
             {/* Timeline line */}
             {index < experiences.length - 1 && (
-              <div
-                className="w-0.5 bg-gray-100 dark:bg-gray-800"
-                style={{ height: "calc(100%)" }}
-              ></div>
+              <div className='my-2 w-0.5 flex-grow bg-gray-100 dark:bg-gray-800' />
             )}
           </div>
+
           {/* Content */}
-          <div className="flex-grow text-left pr-4">
-            <div className="text-sm text-gray-500 uppercase">
+          <div className='flex-grow pb-8 pl-4 text-left'>
+            <div className='text-sm uppercase text-gray-500'>
               {exp.startDate} - {exp.endDate}
             </div>
-            <h3 className="text-xl font-bold">{exp.jobRole}</h3>
-            <h4 className="text-lg font-semibold text-gray-600">
+            <h3 className='text-xl font-bold'>{exp.jobRole}</h3>
+            <h4 className='text-lg font-semibold text-gray-600 dark:text-gray-400'>
               {exp.companyName}
             </h4>
-            <p className="mt-2 text-gray-700">{exp.description}</p>
+            <p className='mt-2 text-gray-700 dark:text-gray-300'>{exp.description}</p>
           </div>
         </div>
       ))}

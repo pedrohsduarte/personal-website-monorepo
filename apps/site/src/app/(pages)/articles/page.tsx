@@ -1,22 +1,22 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Link from "next/link";
+import Link from 'next/link';
+import matter from 'gray-matter';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const ARTICLES_PER_PAGE = 5;
 
-export default function Articles({ params }: { params: { page: string } }) {
+export default function Articles({params}: {params: {page: string}}) {
   const page = parseInt(params.page) || 1;
-  const articlesDirectory = path.join(process.cwd(), "articles");
+  const articlesDirectory = path.join(process.cwd(), 'articles');
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const articles = fileNames
-    .map((fileName) => {
+    .map(fileName => {
       const fullPath = path.join(articlesDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const {data} = matter(fileContents);
       return {
-        slug: fileName.replace(/\.mdx$/, ""),
+        slug: fileName.replace(/\.mdx$/, ''),
         title: data.title,
         date: data.date,
       };
@@ -29,35 +29,26 @@ export default function Articles({ params }: { params: { page: string } }) {
   const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-3xl font-bold">Articles</h1>
-      <ul className="space-y-2">
-        {paginatedArticles.map((article) => (
+    <div className='space-y-4'>
+      <h1 className='text-3xl font-bold'>Articles</h1>
+      <ul className='space-y-2'>
+        {paginatedArticles.map(article => (
           <li key={article.slug}>
-            <Link
-              href={`/articles/${article.slug}`}
-              className="text-blue-600 hover:underline"
-            >
+            <Link href={`/articles/${article.slug}`} className='text-blue-600 hover:underline'>
               {article.title}
             </Link>
-            <span className="text-gray-500 ml-2">{article.date}</span>
+            <span className='ml-2 text-gray-500'>{article.date}</span>
           </li>
         ))}
       </ul>
-      <div className="flex justify-between">
+      <div className='flex justify-between'>
         {page > 1 && (
-          <Link
-            href={`/articles/${page - 1}`}
-            className="text-blue-600 hover:underline"
-          >
+          <Link href={`/articles/${page - 1}`} className='text-blue-600 hover:underline'>
             Previous
           </Link>
         )}
         {page < totalPages && (
-          <Link
-            href={`/articles/${page + 1}`}
-            className="text-blue-600 hover:underline"
-          >
+          <Link href={`/articles/${page + 1}`} className='text-blue-600 hover:underline'>
             Next
           </Link>
         )}

@@ -1,38 +1,31 @@
 {
-  "name": "personal-website-monorepo",
-  "version": "0.0.1",
-  "author": {
-    "name": "Pedro Duarte"
-  },
   "private": true,
-  "packageManager": "yarn@1.22.22",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "name": "personal-website",
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
     "prepare": "husky",
-    "test": "turbo run test"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "type-check": "turbo run type-check",
+    "lint": "turbo run lint",
+    "code-format": "turbo run code-format",
+    "dev:web": "turbo run dev --filter=web"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@next/eslint-plugin-next": "^14.2.5",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-typescript": "^3.6.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-import-helpers": "^1.3.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0",
-    "husky": "^9.1.4",
-    "prettier": "^3.3.3",
-    "turbo": "^2.0.12",
-    "typescript": "^5.5.4"
-  }
+    "@turbo/gen": "^2.0.12",
+    "eslint": "8.57.0",
+    "eslint-config-custom": "*",
+    "husky": "9.1.4",
+    "lint-staged": "15.2.8",
+    "prettier": "3.3.3",
+    "prettier-plugin-tailwindcss": "0.6.5",
+    "prettier-config-custom": "*",
+    "turbo": "^2.0.12"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

@@ -1,16 +1,9 @@
 echo '🏗️👷 Validating the code before committing👷‍♂️🏗️'
 
-# Check ESLint Standards
-
-#echo 'Linting...'
-#yarn lint ||
-#(
-#    echo '🔨❌ Yoo, you have a problem in your code. Check the linter 🔨❌
-#          Run yarn lint, add changes and try commit again.';
-#    false;
-#)
+npx lint-staged
 
 echo 'Checking commit message...'
+
 yarn commitlint --edit
 
 echo '🎉 No error found: committing this now.... ✨🚀🏄‍♂️🍻'

@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
+import {MDXRemote} from 'next-mdx-remote/rsc';
+import matter from 'gray-matter';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Dynamically import the Counter component
-const Counter = dynamic(() => import("../../../components/Counter"), {
+const Counter = dynamic(() => import('../../../components/Counter'), {
   ssr: false,
 });
 
@@ -15,28 +15,24 @@ const components = {
 };
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), "articles"));
+  const files = fs.readdirSync(path.join(process.cwd(), 'articles'));
 
-  return files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
+  return files.map(filename => ({
+    slug: filename.replace('.mdx', ''),
   }));
 }
 
-export default async function Article({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
+export default async function Article({params}: {params: {slug: string}}) {
+  const {slug} = params;
   const markdownFile = fs.readFileSync(
-    path.join(process.cwd(), "articles", slug + ".mdx"),
-    "utf-8",
+    path.join(process.cwd(), 'articles', `${slug}.mdx`),
+    'utf-8',
   );
 
-  const { data: frontMatter, content } = matter(markdownFile);
+  const {data: frontMatter, content} = matter(markdownFile);
 
   return (
-    <article className="prose lg:prose-xl">
+    <article className='prose lg:prose-xl'>
       <h1>{frontMatter.title}</h1>
       <p>
         By {frontMatter.author} on {frontMatter.date}
