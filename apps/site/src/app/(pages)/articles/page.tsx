@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const ARTICLES_PER_PAGE = 5;
 
-export default function Articles({params}: {params: {page: string}}) {
+export default function Articles({ params }: { params: { page: string } }) {
   const page = parseInt(params.page) || 1;
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const fileNames = fs.readdirSync(articlesDirectory);
@@ -14,7 +14,7 @@ export default function Articles({params}: {params: {page: string}}) {
     .map(fileName => {
       const fullPath = path.join(articlesDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const {data} = matter(fileContents);
+      const { data } = matter(fileContents);
       return {
         slug: fileName.replace(/\.mdx$/, ''),
         title: data.title,

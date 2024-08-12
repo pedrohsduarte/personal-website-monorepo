@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 // Dynamically import the Counter component
-const Counter = dynamic(() => import('../../../components/Counter'), {
+const Counter = dynamic(() => import('../../../../components/Counter'), {
   ssr: false,
 });
 

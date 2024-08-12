@@ -1,20 +1,15 @@
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
-
-import Footer from './components/Footer';
-import Nav from './components/Nav';
-import {ThemeProvider} from './contexts/ThemeContext';
+import { Inter } from 'next/font/google';
 
 import './globals.css';
 
-const inter = Inter({subsets: ['latin']});
+import Footer from '@/components/Footer';
+import WithNavBar from '@/components/withNavBar';
+import { ContentProvider } from '@/contexts/ContentContext';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
-export const metadata: Metadata = {
-  title: 'Your Name - Personal Website',
-  description: 'Welcome to my personal website',
-};
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className='h-full'>
       <head>
@@ -36,13 +31,17 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </head>
       <ThemeProvider>
-        <body
-          className={`${inter.className} flex min-h-full flex-col  transition-colors duration-300`}
-        >
-          <Nav />
-          <main className='container mx-auto flex-grow px-4 py-8'>{children}</main>
-          <Footer />
-        </body>
+        <ContentProvider>
+          <body
+            className={`${inter.className} flex min-h-full flex-col  transition-colors duration-300`}
+          >
+            <WithNavBar />
+            <main className='container mx-auto flex-grow px-4 py-8'>
+              <div className='mx-auto max-w-4xl px-4'>{children}</div>
+            </main>
+            <Footer />
+          </body>
+        </ContentProvider>
       </ThemeProvider>
     </html>
   );

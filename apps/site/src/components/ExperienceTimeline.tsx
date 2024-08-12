@@ -1,20 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface Experience {
-  startDate: string;
-  endDate: string;
-  companyName: string;
-  jobRole: string;
-  description: string;
-  logo: string;
-}
+import { Experience } from '@/contexts/ContentContext';
 
 interface ExperienceTimelineProps {
   experiences: Experience[];
 }
 
-const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({experiences}) => {
+const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) => {
   return (
     <div className='relative'>
       {experiences.map((exp, index) => (
@@ -44,7 +37,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({experiences}) =>
           {/* Content */}
           <div className='flex-grow pb-8 pl-4 text-left'>
             <div className='text-sm uppercase text-gray-500'>
-              {exp.startDate} - {exp.endDate}
+              {exp.startDate} · {exp.endDate}
             </div>
             <h3 className='text-xl font-bold'>{exp.jobRole}</h3>
             <h4 className='text-lg font-semibold text-gray-600 dark:text-gray-400'>
