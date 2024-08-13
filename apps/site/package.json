@@ -24,16 +24,17 @@
     "ui": "*"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
-    "eslint-config-custom": "*",
-    "prettier": "3.3.3",
-    "prettier-config-custom": "*",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "20.14.8",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-custom": "*",
     "postcss": "8.4.41",
+    "prettier": "3.3.3",
+    "prettier-config-custom": "*",
     "tailwindcss": "^3.4.9",
-    "typescript": "5.5.4",
-    "tsconfig": "*"
+    "tsconfig": "*",
+    "typescript": "5.5.4"
   }
 }

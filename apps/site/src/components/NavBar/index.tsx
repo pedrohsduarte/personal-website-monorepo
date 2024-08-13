@@ -11,19 +11,19 @@ type NavItem = {
 };
 
 type NavbarProps = {
-  brandName: string;
+  personName: string;
   navItems: NavItem[];
   onThemeTogglerClick?: () => void;
 };
 
-const NavBar: FC<NavbarProps> = ({ brandName, navItems, onThemeTogglerClick }) => {
+const NavBar: FC<NavbarProps> = ({ personName, navItems, onThemeTogglerClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className='bg-white p-4 text-gray-800 dark:bg-gray-800 dark:text-white'>
+    <nav className='bg-white p-4 text-gray-800 dark:bg-black dark:text-white'>
       <div className='mx-auto flex max-w-4xl items-center justify-between'>
         <Link href='/' className='text-xl font-bold'>
-          {brandName}
+          {personName}
         </Link>
         <div className='hidden items-center space-x-4 md:flex'>
           {navItems.map(item => (

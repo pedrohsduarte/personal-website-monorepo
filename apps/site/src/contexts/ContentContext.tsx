@@ -15,7 +15,11 @@ export type ContentContextType = {
   name: string;
   title: string;
   description: string;
-  experiences: Experience[];
+  githubUrl: string;
+  linkedinUrl: string;
+  xUrl: string;
+  email: string;
+  workExperience: Experience[];
   // Add more global content properties here
 };
 
@@ -24,7 +28,11 @@ const contentData: ContentContextType = {
   title: 'Software Architect',
   description:
     "I'm Pedro, an IT Architect. I'm passionate about technology, innovation, and entrepreneurship. CS grad., with 13+ years of experience in software development, architecture, and leadership.",
-  experiences: [
+  githubUrl: 'https://github.com/pedrohsduarte',
+  linkedinUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
+  xUrl: 'https://x.com/femto51',
+  email: 'pedrohsduarte@gmail.com',
+  workExperience: [
     {
       startDate: 'ABR 2023',
       endDate: 'PRESENT',
@@ -65,7 +73,7 @@ const contentData: ContentContextType = {
       startDate: 'OCT 2012',
       endDate: 'Aug 2017',
       companyName: 'Algar Telecom',
-      jobRole: 'Software Engineer',
+      jobRole: 'Senior Software Engineer',
       description:
         'Progressed from junior to senior developer, working on diverse projects and continuously expanding technical expertise.',
       logo: '/images/logos/algar-telecom.png',

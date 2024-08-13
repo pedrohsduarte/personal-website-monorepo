@@ -1,42 +1,16 @@
-import Link from 'next/link';
-
 function Footer() {
   return (
-    <footer className='bg-gray-800 py-4 text-white'>
+    <footer className='bg-white p-4 text-gray-800 dark:bg-black dark:text-white'>
       <div className='container mx-auto flex flex-col items-center justify-between px-4 md:flex-row'>
         <div className='mb-4 md:mb-0'>
           <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
         </div>
-        <nav className='mb-4 md:mb-0'>
-          <ul className='flex space-x-4'>
-            <li>
-              <Link href='/' className='hover:text-gray-300'>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href='/about' className='hover:text-gray-300'>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href='/articles' className='hover:text-gray-300'>
-                Articles
-              </Link>
-            </li>
-            <li>
-              <Link href='/projects' className='hover:text-gray-300'>
-                Projects
-              </Link>
-            </li>
-          </ul>
-        </nav>
         <div>
           <a
             href='https://twitter.com/yourusername'
             target='_blank'
             rel='noopener noreferrer'
-            className='mr-4 hover:text-gray-300'
+            className='mr-4 text-gray-300'
           >
             Twitter
           </a>
@@ -44,7 +18,7 @@ function Footer() {
             href='https://github.com/yourusername'
             target='_blank'
             rel='noopener noreferrer'
-            className='mr-4 hover:text-gray-300'
+            className='mr-4 text-gray-300'
           >
             <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
               <title>GitHub</title>
@@ -55,7 +29,7 @@ function Footer() {
             href='https://linkedin.com/in/yourusername'
             target='_blank'
             rel='noopener noreferrer'
-            className='hover:text-gray-300'
+            className='text-gray-300'
           >
             <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
               <title>LinkedIn</title>

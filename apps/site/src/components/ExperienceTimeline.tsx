@@ -14,7 +14,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
         <div key={index} className='flex flex-row'>
           <div className='flex flex-col items-center'>
             {/* Logo */}
-            <div className='relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-gray-100 bg-white dark:bg-zinc-800'>
+            <div className='relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-200 bg-white dark:border-gray-800 dark:bg-zinc-800'>
               <div className='relative h-6 w-6'>
                 <Image
                   src={exp.logo}
@@ -30,7 +30,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
 
             {/* Timeline line */}
             {index < experiences.length - 1 && (
-              <div className='my-2 w-0.5 flex-grow bg-gray-100 dark:bg-gray-800' />
+              <div className='w-0.5 flex-grow bg-gray-100 dark:bg-gray-800' />
             )}
           </div>
 

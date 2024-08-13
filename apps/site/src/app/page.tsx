@@ -1,5 +1,5 @@
-import AboutMe from '@/components/AboutMe';
+import WithAboutMe from '@/components/withAboutMe';
 
 export default function Home() {
-  return <AboutMe />;
+  return <WithAboutMe />;
 }

@@ -11,7 +11,6 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Articles', href: '/articles' },
-  { label: 'Projects', href: '/projects' },
   { label: 'Resume', href: '/resume' },
 ];
 
@@ -21,7 +20,7 @@ const WithNavBar: FC = () => {
 
   const toggleCurrentTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
-  return <NavBar brandName={name} navItems={navItems} onThemeTogglerClick={toggleCurrentTheme} />;
+  return <NavBar personName={name} navItems={navItems} onThemeTogglerClick={toggleCurrentTheme} />;
 };
 
 export default WithNavBar;

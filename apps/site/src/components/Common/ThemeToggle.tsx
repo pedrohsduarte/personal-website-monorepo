@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, MouseEvent, useEffect, useState } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { MoonStar, SunDim } from 'lucide-react';
 
 type ThemeToggleProps = {
@@ -8,14 +8,6 @@ type ThemeToggleProps = {
 };
 
 const ThemeToggle: FC<ThemeToggleProps> = ({ onClick = () => {} }) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <button
       onClick={onClick}

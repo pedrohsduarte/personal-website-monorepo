@@ -2,44 +2,68 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { FC } from 'react';
 
-import ExperienceTimeline from '@/components/ExperienceTimeline';
-import { useContent } from '@/contexts/ContentContext';
+import Icon, { IconType } from '@/components/Icon';
 
-export default function AboutMe() {
-  const { name, experiences, title, description } = useContent();
+type SocialLinks = {
+  text: string;
+  href: string;
+  icon: IconType;
+};
 
+type AboutMeProps = {
+  personName: string;
+  description: string;
+  socialLinks: SocialLinks[];
+};
+
+const AboutMe: FC<AboutMeProps> = ({ personName, description, socialLinks }) => {
   return (
-    <>
-      <div className='my-8 text-center'>
-        <Image
-          src={'/images/profile-image.jpg'}
-          alt={name}
-          width={120}
-          height={120}
-          className='mx-auto rounded-full'
-        />
-        <h1 className='mt-4 text-3xl font-bold'>{name}</h1>
-        <p className='mt-2 text-xl'>{title}.</p>
-        <p className='mt-4'>{description}</p>
-        <ExperienceTimeline experiences={experiences} />
+    <div className='container mx-auto py-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24'>
+        <div className='order-2 md:order-1'>
+          <h1 className='mb-4 text-4xl font-bold md:text-5xl'>{personName}</h1>
+          <p className='mb-6 text-xl'>{description}</p>
+        </div>
+        <div className='order-1 flex flex-col items-start md:order-2'>
+          <div className='relative mb-6 aspect-square w-full max-w-[320px]'>
+            <Image
+              src='/images/profile.jpg'
+              alt={personName}
+              layout='fill'
+              objectFit='cover'
+              className='rotate-3 rounded-3xl'
+            />
+          </div>
+          <div className='hidden md:flex md:flex-col md:items-start'>
+            {socialLinks?.map(({ text, href, icon }) => (
+              <Link
+                key={text}
+                href={href}
+                className='mb-2 flex items-center text-sm font-medium text-zinc-800 transition dark:text-zinc-200'
+              >
+                <Icon icon={icon} size={16} color='#71717a' />
+                <span className='ml-2'>{text}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className='my-4 flex justify-center space-x-4'>
-        <Link href='https://twitter.com/yourusername'>
-          <span className='sr-only'>Twitter</span>
-          <svg className='h-6 w-6' fill='currentColor' viewBox='0 0 24 24'>
-            {/* Twitter icon path */}
-          </svg>
-        </Link>
-        {/* Add other social media links similarly */}
+      <div className='mt-8 flex flex-col items-start md:hidden'>
+        {socialLinks?.map(({ text, href, icon }) => (
+          <Link
+            key={text}
+            href={href}
+            className='mb-2 flex items-center text-sm font-medium text-zinc-800 transition dark:text-zinc-200'
+          >
+            <Icon icon={icon} size={16} color='#71717a' />
+            <span className='ml-2'>{text}</span>
+          </Link>
+        ))}
       </div>
-      <div className='my-8 grid grid-cols-1 gap-4 md:grid-cols-3'>
-        {/* Add your image gallery items here */}
-        <div className='h-48 rounded-lg bg-gray-200' />
-        <div className='h-48 rounded-lg bg-gray-200' />
-        <div className='h-48 rounded-lg bg-gray-200' />
-      </div>
-    </>
+    </div>
   );
-}
+};
+
+export default AboutMe;

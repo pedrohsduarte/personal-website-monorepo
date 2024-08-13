@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 
 import './globals.css';
 
@@ -7,7 +7,7 @@ import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Open_Sans({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <ThemeProvider>
         <ContentProvider>
           <body
-            className={`${inter.className} flex min-h-full flex-col  transition-colors duration-300`}
+            className={`${inter.className} flex min-h-full flex-col transition-colors duration-300`}
           >
             <WithNavBar />
             <main className='container mx-auto flex-grow px-4 py-8'>

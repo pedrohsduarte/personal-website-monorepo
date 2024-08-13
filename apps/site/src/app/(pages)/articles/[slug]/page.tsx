@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import {MDXRemote} from 'next-mdx-remote/rsc';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,14 +22,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Article({params}: {params: {slug: string}}) {
-  const {slug} = params;
+export default async function Article({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const markdownFile = fs.readFileSync(
     path.join(process.cwd(), 'articles', `${slug}.mdx`),
     'utf-8',
   );
 
-  const {data: frontMatter, content} = matter(markdownFile);
+  const { data: frontMatter, content } = matter(markdownFile);
 
   return (
     <article className='prose lg:prose-xl'>
