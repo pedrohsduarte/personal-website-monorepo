@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             <WithNavBar />
             <main className='container mx-auto flex-grow px-4 py-8'>
-              <div className='mx-auto max-w-4xl px-4'>{children}</div>
+              <div className='mx-auto max-w-5xl'>{children}</div>
             </main>
             <Footer />
           </body>

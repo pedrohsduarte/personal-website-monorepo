@@ -5,8 +5,12 @@ import path from 'node:path';
 
 const ARTICLES_PER_PAGE = 5;
 
-export default function Articles({ params }: { params: { page: string } }) {
-  const page = parseInt(params.page) || 1;
+export default function Articles({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const page = parseInt(searchParams.page?.toString() || '1');
   const articlesDirectory = path.join(process.cwd(), 'articles');
   const fileNames = fs.readdirSync(articlesDirectory);
 
@@ -43,12 +47,12 @@ export default function Articles({ params }: { params: { page: string } }) {
       </ul>
       <div className='flex justify-between'>
         {page > 1 && (
-          <Link href={`/articles/${page - 1}`} className='text-blue-600 hover:underline'>
+          <Link href={`/articles?page=${page - 1}`} className='text-blue-600 hover:underline'>
             Previous
           </Link>
         )}
         {page < totalPages && (
-          <Link href={`/articles/${page + 1}`} className='text-blue-600 hover:underline'>
+          <Link href={`/articles?page=${page + 1}`} className='text-blue-600 hover:underline'>
             Next
           </Link>
         )}

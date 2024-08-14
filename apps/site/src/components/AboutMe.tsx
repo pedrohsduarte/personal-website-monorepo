@@ -36,15 +36,15 @@ const AboutMe: FC<AboutMeProps> = ({ personName, description, socialLinks }) => 
               className='rotate-3 rounded-3xl'
             />
           </div>
-          <div className='hidden md:flex md:flex-col md:items-start'>
+          <div className='mt-4 hidden gap-3 md:flex md:flex-col md:items-start'>
             {socialLinks?.map(({ text, href, icon }) => (
               <Link
                 key={text}
                 href={href}
                 className='mb-2 flex items-center text-sm font-medium text-zinc-800 transition dark:text-zinc-200'
               >
-                <Icon icon={icon} size={16} color='#71717a' />
-                <span className='ml-2'>{text}</span>
+                <Icon icon={icon} size={18} color='#71717a' />
+                <span className='ml-5'>{text}</span>
               </Link>
             ))}
           </div>

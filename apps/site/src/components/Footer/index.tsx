@@ -1,6 +1,9 @@
+import Divider from '@/components/Common/Divider';
+
 function Footer() {
   return (
-    <footer className='bg-white p-4 text-gray-800 dark:bg-black dark:text-white'>
+    <footer className='mx-auto w-full max-w-7xl bg-white p-4 text-gray-800 dark:bg-black dark:text-white lg:px-8'>
+      <Divider />
       <div className='container mx-auto flex flex-col items-center justify-between px-4 md:flex-row'>
         <div className='mb-4 md:mb-0'>
           <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>

@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { FC, useState } from 'react';
 
 import ThemeToggle from '../Common/ThemeToggle';
@@ -11,20 +13,26 @@ type NavItem = {
 };
 
 type NavbarProps = {
-  personName: string;
   navItems: NavItem[];
   onThemeTogglerClick?: () => void;
 };
 
-const NavBar: FC<NavbarProps> = ({ personName, navItems, onThemeTogglerClick }) => {
+const NavBar: FC<NavbarProps> = ({ navItems, onThemeTogglerClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav className='bg-white p-4 text-gray-800 dark:bg-black dark:text-white'>
-      <div className='mx-auto flex max-w-4xl items-center justify-between'>
-        <Link href='/' className='text-xl font-bold'>
-          {personName}
-        </Link>
+    <nav className='mx-auto w-full max-w-7xl bg-white p-4 text-gray-800 dark:bg-black dark:text-white'>
+      <div className=' flex  items-center justify-between'>
+        <div className='flex items-center'>
+          {pathname !== '/' && (
+            <Link href='/' className='flex items-center px-2'>
+              <div className='relative h-10 w-10 overflow-hidden rounded-full'>
+                <Image src='/images/profile-sm.jpg' alt='Home' layout='fill' objectFit='cover' />
+              </div>
+            </Link>
+          )}
+        </div>
         <div className='hidden items-center space-x-4 md:flex'>
           {navItems.map(item => (
             <Link
@@ -35,8 +43,8 @@ const NavBar: FC<NavbarProps> = ({ personName, navItems, onThemeTogglerClick }) 
               {item.label}
             </Link>
           ))}
-          <ThemeToggle onClick={onThemeTogglerClick} />
         </div>
+        <ThemeToggle onClick={onThemeTogglerClick} />
         <button
           className='rounded-md bg-gray-200 p-2 dark:bg-gray-700 md:hidden'
           onClick={() => {

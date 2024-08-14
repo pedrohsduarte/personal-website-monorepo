@@ -20,7 +20,6 @@ export type ContentContextType = {
   xUrl: string;
   email: string;
   workExperience: Experience[];
-  // Add more global content properties here
 };
 
 const contentData: ContentContextType = {
@@ -31,7 +30,7 @@ const contentData: ContentContextType = {
   githubUrl: 'https://github.com/pedrohsduarte',
   linkedinUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
-  email: 'pedrohsduarte@gmail.com',
+  email: 'pedro@exacode.com.br',
   workExperience: [
     {
       startDate: 'ABR 2023',
