@@ -2,6 +2,7 @@ import { Open_Sans } from 'next/font/google';
 
 import './globals.css';
 
+import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
@@ -35,11 +36,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <body
             className={`${inter.className} flex min-h-full flex-col transition-colors duration-300`}
           >
-            <WithNavBar />
-            <main className='container mx-auto flex-grow px-4 py-8'>
-              <div className='mx-auto max-w-5xl'>{children}</div>
-            </main>
-            <Footer />
+            <div className='flex min-h-screen flex-col'>
+              <WithNavBar />
+              <main className='flex-grow'>
+                <Container>{children}</Container>
+              </main>
+              <Footer />
+            </div>
           </body>
         </ContentProvider>
       </ThemeProvider>

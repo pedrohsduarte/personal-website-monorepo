@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes expand {
+  to {
+    clip-path: circle(150% at 50% 50%);
+  }
+}
+
 body {
   @apply bg-white text-gray-900 dark:bg-black dark:text-white;
 }
