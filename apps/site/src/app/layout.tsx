@@ -33,9 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <ThemeProvider>
         <ContentProvider>
-          <body
-            className={`${inter.className} flex min-h-full flex-col transition-colors duration-300`}
-          >
+          <body className={`${inter.className} flex min-h-full flex-col`}>
             <div className='flex min-h-screen flex-col'>
               <WithNavBar />
               <main className='flex-grow'>

@@ -41,7 +41,7 @@ const AboutMe: FC<AboutMeProps> = ({ personName, description, socialLinks }) => 
               <Link
                 key={text}
                 href={href}
-                className='mb-2 flex items-center text-sm font-medium text-zinc-800 transition dark:text-zinc-200'
+                className='mb-2 flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-200'
               >
                 <Icon icon={icon} size={18} color='#71717a' />
                 <span className='ml-5'>{text}</span>
@@ -55,7 +55,7 @@ const AboutMe: FC<AboutMeProps> = ({ personName, description, socialLinks }) => 
           <Link
             key={text}
             href={href}
-            className='mb-2 flex items-center text-sm font-medium text-zinc-800 transition dark:text-zinc-200'
+            className='mb-2 flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-200'
           >
             <Icon icon={icon} size={16} color='#71717a' />
             <span className='ml-2'>{text}</span>

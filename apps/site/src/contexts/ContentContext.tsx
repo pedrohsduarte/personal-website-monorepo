@@ -26,7 +26,7 @@ const contentData: ContentContextType = {
   name: 'Pedro Duarte',
   title: 'Software Architect',
   description:
-    "I'm Pedro, an IT Architect. I'm passionate about technology, innovation, and entrepreneurship. CS grad., with 13+ years of experience in software development, architecture, and leadership.",
+    "I'm Pedro, a software engineer based in Uberlândia, Brazil. I'm passionate about software architecture, code quality, and helping. CS grad., with 13+ years of experience in software development, architecture, and leadership.",
   githubUrl: 'https://github.com/pedrohsduarte',
   linkedinUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
