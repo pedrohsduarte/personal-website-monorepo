@@ -7,7 +7,6 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 
 import ThemeToggle from '@/components/Common/ThemeToggle';
-import Container from '@/components/Container';
 
 type NavItem = {
   label: string;
@@ -48,47 +47,40 @@ const NavBar: FC<NavbarProps> = ({ navItems, onThemeTogglerClick }) => {
 
   return (
     <>
-      <nav className='bg-white py-8 text-gray-800 dark:bg-black dark:text-white'>
-        <Container>
-          <div className='mx-auto max-w-5xl'>
-            <div className='flex items-center justify-between gap-4'>
-              <div className='flex items-center'>
-                {pathname !== '/' && (
-                  <Link href='/' className='flex items-center'>
-                    <div className='relative h-10 w-10 overflow-hidden rounded-full'>
-                      <Image
-                        src='/images/profile-sm.jpg'
-                        alt='Home'
-                        layout='fill'
-                        objectFit='cover'
-                      />
-                    </div>
-                  </Link>
-                )}
-              </div>
-              <div className='hidden items-center space-x-4 md:flex'>
-                {navItems.map(item => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className='font-semibold hover:text-gray-500 dark:hover:text-gray-300'
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-              <div className='flex flex-1 justify-end sm:visible md:hidden'>
-                <button
-                  className='group flex items-center rounded-md bg-gray-200 p-2 dark:bg-gray-700 md:hidden'
-                  onClick={() => setIsMenuOpen(true)}
-                >
-                  Menu <ChevronDown />
-                </button>
-              </div>
-              <ThemeToggle onClick={onThemeTogglerClick} />
+      <nav className='mx-auto max-w-5xl'>
+        <div className='flex items-center justify-between gap-4'>
+          <div className='flex items-center'>
+            <div className='relative h-10 w-10 overflow-hidden rounded-full'>
+              {pathname !== '/' ? (
+                <Link href='/' className='flex items-center'>
+                  <Image src='/images/profile-sm.jpg' alt='Home' layout='fill' objectFit='cover' />
+                </Link>
+              ) : (
+                <div className='h-full w-full' />
+              )}
             </div>
           </div>
-        </Container>
+          <div className='hidden items-center space-x-4 md:flex'>
+            {navItems.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className='font-semibold hover:text-gray-500 dark:hover:text-gray-300'
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className='flex flex-1 justify-end sm:visible md:hidden'>
+            <button
+              className='group flex items-center rounded-md bg-gray-200 p-2 dark:bg-gray-700 md:hidden'
+              onClick={() => setIsMenuOpen(true)}
+            >
+              Menu <ChevronDown />
+            </button>
+          </div>
+          <ThemeToggle onClick={onThemeTogglerClick} />
+        </div>
       </nav>
 
       {/* Modal */}

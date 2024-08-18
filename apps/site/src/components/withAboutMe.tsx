@@ -12,7 +12,7 @@ import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import XIcon from '@/assets/icons/x.svg';
 
 const WithAboutMe: FC = () => {
-  const { name, description, githubUrl, linkedinUrl, xUrl, email } = useContent();
+  const { name, aboutMeTitle, githubUrl, linkedinUrl, xUrl, email } = useContent();
 
   // create github, linkedin, x, and email icons for AboutMe
   const socialLinks = [
@@ -22,7 +22,7 @@ const WithAboutMe: FC = () => {
     { text: email, href: `mailto:${email}`, icon: Mail },
   ];
 
-  return <AboutMe personName={name} description={description} socialLinks={socialLinks} />;
+  return <AboutMe personName={name} title={aboutMeTitle} socialLinks={socialLinks} />;
 };
 
 export default WithAboutMe;

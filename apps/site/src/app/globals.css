@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-position: sticky;
+  --content-offset: 0px;
+  --header-height: 64px;
+  --header-mb: 0px;
+  --header-top: 0px;
+  --avatar-top: 0px;
+}
+
 @keyframes expand {
   to {
     clip-path: circle(150% at 50% 50%);
