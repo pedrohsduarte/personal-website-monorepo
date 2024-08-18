@@ -4,12 +4,10 @@ import matter from 'gray-matter';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Dynamically import the Counter component
 const Counter = dynamic(() => import('../../../../components/Counter'), {
   ssr: false,
 });
 
-// Define the components that can be used in MDX files
 const components = {
   Counter,
 };
@@ -32,12 +30,16 @@ export default async function Article({ params }: { params: { slug: string } }) 
   const { data: frontMatter, content } = matter(markdownFile);
 
   return (
-    <article className='prose lg:prose-xl'>
-      <h1>{frontMatter.title}</h1>
-      <p>
-        By {frontMatter.author} on {frontMatter.date}
-      </p>
-      <MDXRemote source={content} components={components} />
-    </article>
+    <div className='container mx-auto py-8'>
+      <article className='prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto max-w-full break-words'>
+        <h1 className='break-words'>{frontMatter.title}</h1>
+        <p>
+          By {frontMatter.author} on {frontMatter.date}
+        </p>
+        <div className='max-w-full overflow-hidden'>
+          <MDXRemote source={content} components={components} />
+        </div>
+      </article>
+    </div>
   );
 }
