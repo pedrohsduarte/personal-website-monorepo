@@ -1,0 +1,14 @@
+.dockerignore
+.env.template
+.env.dev
+.env.prod
+.git
+.husky
+.next
+.turbo
+.vscode
+.yarn_cache
+Dockerfile
+node_modules
+README.md
+yarn-error.log

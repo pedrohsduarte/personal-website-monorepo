@@ -4,7 +4,9 @@
   "scripts": {
     "prepare": "husky",
     "build": "turbo run build",
+    "build:docker": "docker compose build",
     "dev": "turbo run dev",
+    "dev:docker": "docker-compose --env-file .env.local up --watch",
     "type-check": "turbo run type-check",
     "lint": "turbo run lint",
     "code-format": "turbo run code-format",

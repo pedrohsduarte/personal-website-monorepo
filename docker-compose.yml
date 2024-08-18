@@ -1,0 +1,34 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.site
+      target: dev.site
+    container_name: personal-website
+    develop:
+      watch:
+        - action: sync
+          path: ./apps/site/src
+          target: /usr/src/root-workspace/apps/site/src
+        - action: sync
+          path: ./apps/site/articles
+          target: /usr/src/root-workspace/apps/site/articles
+        - action: sync
+          path: ./apps/site/public
+          target: /usr/src/root-workspace/apps/site/public
+        - action: sync
+          path: ./apps/site/next.config.mjs
+          target: /usr/src/root-workspace/apps/site/next.config.mjs
+        - action: sync
+          path: ./apps/site/tailwind.config.js
+          target: /usr/src/root-workspace/apps/site/tailwind.config.js
+        - action: sync
+          path: ./apps/site/tsconfig.json
+          target: /usr/src/root-workspace/apps/site/tsconfig.json
+        - action: sync
+          path: ./apps/site/postcss.config.js
+          target: /usr/src/root-workspace/apps/site/postcss.config.js
+    ports:
+      - '3000:3000'
+    working_dir: /usr/src/root-workspace/apps/site
+    command: yarn dev
