@@ -15,19 +15,30 @@ export type ContentContextType = {
   name: string;
   jobTitle: string;
   aboutMeTitle: string;
-  githubUrl: string;
-  linkedinUrl: string;
-  xUrl: string;
-  email: string;
+  githubUrl?: string;
+  linkedInUrl?: string;
+  xUrl?: string;
+  email?: string;
   workExperience: Experience[];
 };
+
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
+export const navigationItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Articles', href: '/articles' },
+  { label: 'Resume', href: '/resume' },
+];
 
 const contentData: ContentContextType = {
   name: 'Pedro Duarte',
   jobTitle: 'Software Architect',
   aboutMeTitle: 'Hi, I’m Pedro Duarte',
   githubUrl: 'https://github.com/pedrohsduarte',
-  linkedinUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
+  linkedInUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
   email: 'pedro@exacode.com.br',
   workExperience: [

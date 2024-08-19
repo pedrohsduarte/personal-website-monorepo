@@ -3,7 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 
 import Container from '@/components/Container';
-import Footer from '@/components/Footer';
+import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <main className='flex-auto'>
                 <Container>{children}</Container>
               </main>
-              <Footer />
+              <WithFooter />
             </div>
           </body>
         </ContentProvider>

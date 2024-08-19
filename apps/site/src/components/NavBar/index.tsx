@@ -7,11 +7,7 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 
 import ThemeToggle from '@/components/Common/ThemeToggle';
-
-type NavItem = {
-  label: string;
-  href: string;
-};
+import { NavItem } from '@/contexts/ContentContext';
 
 type NavbarProps = {
   navItems: NavItem[];

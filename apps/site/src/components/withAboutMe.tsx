@@ -12,15 +12,15 @@ import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import XIcon from '@/assets/icons/x.svg';
 
 const WithAboutMe: FC = () => {
-  const { name, aboutMeTitle, githubUrl, linkedinUrl, xUrl, email } = useContent();
+  const { name, aboutMeTitle, githubUrl, linkedInUrl, xUrl, email } = useContent();
 
   // create github, linkedin, x, and email icons for AboutMe
   const socialLinks = [
-    { text: 'Follow on X', href: xUrl, icon: XIcon },
-    { text: 'Follow on Github', href: githubUrl, icon: GithubIcon },
-    { text: 'Connect on LinkedIn', href: linkedinUrl, icon: LinkedinIcon },
-    { text: email, href: `mailto:${email}`, icon: Mail },
-  ];
+    xUrl ? { text: 'Follow on X', href: xUrl, icon: XIcon } : null,
+    githubUrl ? { text: 'Follow on Github', href: githubUrl, icon: GithubIcon } : null,
+    linkedInUrl ? { text: 'Connect on LinkedIn', href: linkedInUrl, icon: LinkedinIcon } : null,
+    email ? { text: email, href: `mailto:${email}`, icon: Mail } : null,
+  ].filter(link => link != null);
 
   return <AboutMe personName={name} title={aboutMeTitle} socialLinks={socialLinks} />;
 };
