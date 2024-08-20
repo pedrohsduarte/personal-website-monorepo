@@ -1,4 +1,7 @@
 import createMDX from '@next/mdx';
+import path from 'path';
+
+const __dirname = import.meta.dirname;
 
 const withMDX = createMDX({
   options: {
@@ -16,6 +19,7 @@ const nextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
 
     return config;
   },
