@@ -21,6 +21,7 @@
     "next-mdx-remote": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.9",
     "ui": "*"
   },
   "devDependencies": {
@@ -33,7 +34,6 @@
     "postcss": "8.4.41",
     "prettier": "3.3.3",
     "prettier-config-custom": "*",
-    "tailwindcss": "^3.4.9",
     "tsconfig": "*",
     "typescript": "5.5.4"
   }
