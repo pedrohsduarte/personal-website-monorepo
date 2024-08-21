@@ -5,11 +5,15 @@ applications:
       phases:
         preBuild:
           commands:
+            - nvm install 20
+            - nvm use 20
             - cd ../..
             - yarn global add turbo
             - yarn install
         build:
           commands:
+            - nvm install 20
+            - nvm use 20
             - yarn build
             - cd apps/site
       artifacts:
