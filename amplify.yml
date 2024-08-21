@@ -2,17 +2,20 @@ version: 1
 applications:
   - appRoot: apps/site
     frontend:
-      buildPath: /
       phases:
         preBuild:
-          commands: ['yarn install']
+          commands:
+            - cd ../.. # Navigate to the root of the monorepo
+            - yarn global add turbo
+            - yarn install
         build:
-          commands: ['yarn build']
+          commands:
+            - yarn build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: apps/site/.next
         files:
           - '**/*'
       cache:
         paths:
-          - '.next/cache/**/*'
+          - 'apps/site/.next/cache/**/*'
           - 'node_modules/**/*'
