@@ -5,6 +5,7 @@ import WithDownloadCVButton from '@/components/withDownloadCVButton';
 import WithEducationTimeline from '@/components/withEducationTimeline';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
 import WithTechnicalSkills from '@/components/withTechnicalSkills';
+import WithLanguages from '@/components/withLanguages';
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -23,6 +24,7 @@ const Resume: React.FC = () => {
         </div>
         <div className='flex w-full flex-col gap-2 md:w-1/4'>
           <WithDownloadCVButton />
+          <WithLanguages />
           <WithTechnicalSkills />
         </div>
       </div>

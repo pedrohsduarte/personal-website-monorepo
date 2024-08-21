@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProgressBar from '@/components/Common/ProgressBar';
+import LinearProgressBar from '@/components/Common/LinearProgressBar';
 import Icon, { IconType } from '@/components/Icon';
 
 export type TechnicalSkill = {
@@ -30,7 +30,7 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ skills }) => {
                 <span className='inline-block whitespace-nowrap font-bold'>{skill.name}</span>
               </div>
               <div className='w-20'>
-                <ProgressBar progress={skill.progress}></ProgressBar>
+                <LinearProgressBar progress={skill.progress}></LinearProgressBar>
               </div>
             </div>
           ))}

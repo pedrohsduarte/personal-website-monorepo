@@ -19,6 +19,11 @@ export type CVFile = {
   fileUrl: string;
 };
 
+export type Language = {
+  name: string;
+  level: 'Native' | 'Fluent' | 'Advanced' | 'Intermediate' | 'Basic';
+};
+
 export type Experience = {
   startDate: string;
   endDate: string;
@@ -37,6 +42,7 @@ export type ContentContextType = {
   xUrl?: string;
   email?: string;
   cvFile?: CVFile;
+  languages: Language[];
   education: Experience[];
   professionalExperience: Experience[];
   technicalSkills: TechnicalSkill[];
@@ -65,6 +71,16 @@ export const contentData: ContentContextType = {
     fileName: 'CV_Pedro_Duarte.pdf',
     fileUrl: '/pdfs/cv.pdf',
   },
+  languages: [
+    {
+      name: 'Portuguese',
+      level: 'Native',
+    },
+    {
+      name: 'English',
+      level: 'Fluent',
+    },
+  ],
   education: [
     {
       startDate: '2009',

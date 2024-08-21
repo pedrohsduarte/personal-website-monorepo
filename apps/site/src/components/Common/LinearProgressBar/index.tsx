@@ -4,7 +4,7 @@ export type ProgressBarProps = {
   progress: number;
 };
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
+const LinearProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   return (
     <div className='h-1.5 w-full bg-gray-200 dark:bg-gray-700'>
       <div className='h-1.5 bg-blue-600' style={{ width: `${progress}%` }}></div>
@@ -12,4 +12,4 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   );
 };
 
-export default ProgressBar;
+export default LinearProgressBar;
