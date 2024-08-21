@@ -5,17 +5,18 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd ../.. # Navigate to the root of the monorepo
+            - cd ../..
             - yarn global add turbo
             - yarn install
         build:
           commands:
             - yarn build
+            - cd apps/site
       artifacts:
-        baseDirectory: apps/site/.next
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
         paths:
-          - 'apps/site/.next/cache/**/*'
-          - 'node_modules/**/*'
+          - '../../../apps/site/.next/cache/**/*'
+          - '../../../node_modules/**/*'
