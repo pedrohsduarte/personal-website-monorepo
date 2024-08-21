@@ -11,10 +11,9 @@ import { NavItem } from '@/contexts/ContentContext';
 
 type NavbarProps = {
   navItems: NavItem[];
-  onThemeTogglerClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const NavBar: FC<NavbarProps> = ({ navItems, onThemeTogglerClick }) => {
+const NavBar: FC<NavbarProps> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const modalRef = useRef<HTMLDivElement>(null);
@@ -79,7 +78,7 @@ const NavBar: FC<NavbarProps> = ({ navItems, onThemeTogglerClick }) => {
               />
             </button>
           </div>
-          <ThemeToggle onClick={onThemeTogglerClick} />
+          <ThemeToggle />
         </div>
       </nav>
 

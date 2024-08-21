@@ -5,6 +5,12 @@ import WithEducationTimeline from '@/components/withEducationTimeline';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
 import WithTechnicalSkills from '@/components/withTechnicalSkills';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resume',
+};
+
 const Resume: React.FC = () => {
   return (
     <div className='w-full space-y-16'>

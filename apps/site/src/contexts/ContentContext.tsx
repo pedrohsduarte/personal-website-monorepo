@@ -53,7 +53,7 @@ export const navigationItems = [
   { label: 'Resume', href: '/resume' },
 ];
 
-const contentData: ContentContextType = {
+export const contentData: ContentContextType = {
   name: 'Pedro Duarte',
   jobTitle: 'Software Architect',
   aboutMeTitle: 'Hi, I’m Pedro Duarte',

@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import fs from 'node:fs';
 import path from 'node:path';
+import { Metadata } from 'next';
 
 const Counter = dynamic(() => import('../../../../components/Counter'), {
   ssr: false,
@@ -18,6 +19,33 @@ export async function generateStaticParams() {
   return files.map(filename => ({
     slug: filename.replace('.mdx', ''),
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = params;
+  const markdownFile = fs.readFileSync(
+    path.join(process.cwd(), 'articles', `${slug}.mdx`),
+    'utf-8',
+  );
+
+  const { data: frontMatter } = matter(markdownFile);
+
+  return {
+    title: `${frontMatter.title}`,
+    description: frontMatter.description || 'An article on my blog',
+    authors: [{ name: frontMatter.author }],
+    openGraph: {
+      title: frontMatter.title,
+      description: frontMatter.description || 'An article on my blog',
+      type: 'article',
+      publishedTime: frontMatter.date,
+      authors: [frontMatter.author],
+    },
+  };
 }
 
 export default async function Article({ params }: { params: { slug: string } }) {

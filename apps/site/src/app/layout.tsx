@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 
 import './globals.css';
@@ -8,6 +9,13 @@ import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { applyCustomStyle } from '@/utils/styles';
+
+export const metadata: Metadata = {
+  title: {
+    default: `Pedro Duarte - Software engineer, architect, and team leader`,
+    template: '%s - Pedro Duarte',
+  },
+};
 
 const inter = Open_Sans({ subsets: ['latin'] });
 
