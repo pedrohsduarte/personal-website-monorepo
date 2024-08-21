@@ -68,6 +68,8 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
             <Link
               key={text}
               href={href}
+              rel='noopener noreferrer'
+              target='_blank'
               className='mb-2 flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-200'
             >
               <Icon icon={icon} size={18} color='#71717a' />
@@ -81,6 +83,8 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
           <Link
             key={text}
             href={href}
+            rel='noopener noreferrer'
+            target='_blank'
             className='mb-2 flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-200'
           >
             <Icon icon={icon} size={16} color='#71717a' />

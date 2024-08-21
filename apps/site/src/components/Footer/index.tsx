@@ -67,6 +67,8 @@ const Footer: FC<FooterProps> = ({
                   <Link
                     key={link.icon.toString()}
                     href={link.href}
+                    rel='noopener noreferrer'
+                    target='_blank'
                     className='flex items-center text-sm font-medium text-zinc-800 dark:text-zinc-200'
                   >
                     <Icon icon={link.icon} size={18} color='#71717a' />
