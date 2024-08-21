@@ -8,6 +8,7 @@ interface IconProps {
   size?: number;
   color?: string;
   className?: string;
+  grayscale?: boolean;
 }
 
 const Icon: React.FC<IconProps> = ({
@@ -15,11 +16,28 @@ const Icon: React.FC<IconProps> = ({
   size = 24,
   color = 'currentColor',
   className = '',
+  grayscale = false,
 }) => {
   const isLucideIcon = 'displayName' in IconComponent;
 
+  const grayscaleStyle: React.CSSProperties = grayscale
+    ? {
+        filter: 'grayscale(100%)',
+        WebkitFilter: 'grayscale(100%)',
+      }
+    : {};
+
+  const containerStyle: React.CSSProperties = {
+    width: size,
+    height: size,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...grayscaleStyle,
+  };
+
   return (
-    <div style={{ width: size, height: size }} className={className}>
+    <div style={containerStyle} className={className}>
       {isLucideIcon ? (
         <IconComponent size={size} color={color} />
       ) : (

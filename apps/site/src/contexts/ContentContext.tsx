@@ -2,6 +2,23 @@
 
 import React, { createContext, useContext } from 'react';
 
+import AWSIcon from '@/assets/icons/aws.svg';
+import AzureIcon from '@/assets/icons/azure.svg';
+import DockerIcon from '@/assets/icons/docker.svg';
+import FlutterIcon from '@/assets/icons/flutter.svg';
+import JavaIcon from '@/assets/icons/java.svg';
+import PostgresIcon from '@/assets/icons/postgres.svg';
+import PythonIcon from '@/assets/icons/python.svg';
+import ReactIcon from '@/assets/icons/react.svg';
+import TerraformIcon from '@/assets/icons/terraform.svg';
+import TypeScriptIcon from '@/assets/icons/typescript.svg';
+import { TechnicalSkill } from '@/components/TechnicalSkills';
+
+export type CVFile = {
+  fileName: string;
+  fileUrl: string;
+};
+
 export type Experience = {
   startDate: string;
   endDate: string;
@@ -19,8 +36,10 @@ export type ContentContextType = {
   linkedInUrl?: string;
   xUrl?: string;
   email?: string;
+  cvFile?: CVFile;
   education: Experience[];
   professionalExperience: Experience[];
+  technicalSkills: TechnicalSkill[];
 };
 
 export type NavItem = {
@@ -42,6 +61,10 @@ const contentData: ContentContextType = {
   linkedInUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
   email: 'pedro@exacode.com.br',
+  cvFile: {
+    fileName: 'CV_Pedro_Duarte.pdf',
+    fileUrl: '/pdfs/cv.pdf',
+  },
   education: [
     {
       startDate: '2009',
@@ -107,6 +130,58 @@ const contentData: ContentContextType = {
       description:
         'Worked on an outsourced team for Algar Telecom, contributing to the Comverse Kenan FX billing system',
       logo: '/images/logos/kyros-tecnologia.png',
+    },
+  ],
+  technicalSkills: [
+    {
+      name: 'React',
+      icon: ReactIcon,
+      progress: 80,
+    },
+    {
+      name: 'TypeScript',
+      icon: TypeScriptIcon,
+      progress: 80,
+    },
+    {
+      name: 'Docker',
+      icon: DockerIcon,
+      progress: 90,
+    },
+    {
+      name: 'AWS',
+      icon: AWSIcon,
+      progress: 90,
+    },
+    {
+      name: 'Azure',
+      icon: AzureIcon,
+      progress: 85,
+    },
+    {
+      name: 'Terraform',
+      icon: TerraformIcon,
+      progress: 90,
+    },
+    {
+      name: 'Java',
+      icon: JavaIcon,
+      progress: 95,
+    },
+    {
+      name: 'Python',
+      icon: PythonIcon,
+      progress: 85,
+    },
+    {
+      name: 'SQL',
+      icon: PostgresIcon,
+      progress: 90,
+    },
+    {
+      name: 'Flutter',
+      icon: FlutterIcon,
+      progress: 80,
     },
   ],
 };

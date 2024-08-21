@@ -1,14 +1,28 @@
+import React from 'react';
+
+import WithDownloadCVButton from '@/components/withDownloadCVButton';
 import WithEducationTimeline from '@/components/withEducationTimeline';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
+import WithTechnicalSkills from '@/components/withTechnicalSkills';
 
-export default function Resume() {
+const Resume: React.FC = () => {
   return (
-    <div className='space-y-16'>
+    <div className='w-full space-y-16'>
       <h1 className='text-5xl font-bold'>My Resume</h1>
-      <h2 className='text-3xl font-bold'>Education</h2>
-      <WithEducationTimeline />
-      <h2 className='text-3xl font-bold'>Professional Experience</h2>
-      <WithProfessionalExperienceTimeline />
+      <div className='flex w-full flex-col gap-2 sm:flex-row'>
+        <div className='w-full space-y-16 md:w-3/4'>
+          <h2 className='text-2xl font-bold'>Education</h2>
+          <WithEducationTimeline />
+          <h2 className='text-2xl font-bold'>Professional Experience</h2>
+          <WithProfessionalExperienceTimeline />
+        </div>
+        <div className='flex w-full flex-col gap-2 md:w-1/4'>
+          <WithDownloadCVButton />
+          <WithTechnicalSkills />
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Resume;
