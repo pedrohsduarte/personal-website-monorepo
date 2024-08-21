@@ -1,8 +1,8 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import matter from 'gray-matter';
 import fs from 'node:fs';
 import path from 'node:path';
-import { Metadata } from 'next';
 
 const ARTICLES_PER_PAGE = 5;
 

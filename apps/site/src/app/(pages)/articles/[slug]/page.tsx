@@ -1,9 +1,9 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import matter from 'gray-matter';
 import fs from 'node:fs';
 import path from 'node:path';
-import { Metadata } from 'next';
 
 const Counter = dynamic(() => import('../../../../components/Counter'), {
   ssr: false,

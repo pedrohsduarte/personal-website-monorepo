@@ -1,7 +1,8 @@
 'use client';
 
 import React, { FC } from 'react';
-import { MoonStar, SunDim, Laptop } from 'lucide-react';
+import { Laptop, MoonStar, SunDim } from 'lucide-react';
+
 import { Theme, useTheme } from '@/contexts/ThemeContext';
 
 const ThemeToggle: FC = () => {

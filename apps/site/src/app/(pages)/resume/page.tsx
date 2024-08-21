@@ -1,11 +1,10 @@
+import { Metadata } from 'next';
 import React from 'react';
 
 import WithDownloadCVButton from '@/components/withDownloadCVButton';
 import WithEducationTimeline from '@/components/withEducationTimeline';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
 import WithTechnicalSkills from '@/components/withTechnicalSkills';
-
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Resume',
