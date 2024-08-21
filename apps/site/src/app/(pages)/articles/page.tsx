@@ -34,7 +34,7 @@ export default function Articles({
 
   return (
     <div className='space-y-4'>
-      <h1 className='text-3xl font-bold'>Articles</h1>
+      <h1 className='text-5xl font-bold'>Articles</h1>
       <ul className='space-y-2'>
         {paginatedArticles.map(article => (
           <li key={article.slug}>

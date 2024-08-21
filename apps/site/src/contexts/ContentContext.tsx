@@ -5,8 +5,8 @@ import React, { createContext, useContext } from 'react';
 export type Experience = {
   startDate: string;
   endDate: string;
-  companyName: string;
-  jobRole: string;
+  organization: string;
+  jobRole?: string;
   description: string;
   logo: string;
 };
@@ -19,7 +19,8 @@ export type ContentContextType = {
   linkedInUrl?: string;
   xUrl?: string;
   email?: string;
-  workExperience: Experience[];
+  education: Experience[];
+  professionalExperience: Experience[];
 };
 
 export type NavItem = {
@@ -41,11 +42,22 @@ const contentData: ContentContextType = {
   linkedInUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
   email: 'pedro@exacode.com.br',
-  workExperience: [
+  education: [
+    {
+      startDate: '2009',
+      endDate: '2013',
+      organization: 'Universidade Federal de Uberlândia',
+      jobRole: 'Bachelor of Computer Science',
+      description:
+        'Throughout my years at UFU, I immersed myself in a dynamic learning environment, surrounded by dedicated faculty and talented peers.',
+      logo: '/images/logos/ufu-logo.png',
+    },
+  ],
+  professionalExperience: [
     {
       startDate: 'ABR 2023',
       endDate: 'PRESENT',
-      companyName: 'Entrustody',
+      organization: 'Entrustody',
       jobRole: 'Software Architect',
       description:
         'Lead development team in creating fintech solutions, collaborating with C-level executives on business strategy and technology alignment.',
@@ -54,7 +66,7 @@ const contentData: ContentContextType = {
     {
       startDate: 'JUL 2020',
       endDate: 'MAR 2022',
-      companyName: 'Exacode',
+      organization: 'Exacode',
       jobRole: 'Co-founder & Software Architect',
       description:
         'Led all aspects of IT consultancy, including architecture, development, project management, sales, and operations.',
@@ -63,7 +75,7 @@ const contentData: ContentContextType = {
     {
       startDate: 'SEP 2018',
       endDate: 'JUL 2020',
-      companyName: 'Yandeh',
+      organization: 'Yandeh',
       jobRole: 'Software Architect',
       description:
         'Led development teams in building an ecosystem for the supply chain industry, focusing on solutions for manufacturers, suppliers, and retailers.',
@@ -72,7 +84,7 @@ const contentData: ContentContextType = {
     {
       startDate: 'SEP 2017',
       endDate: 'AUG 2018',
-      companyName: 'Hub Fintech',
+      organization: 'Hub Fintech',
       jobRole: 'Senior Software Engineer',
       description:
         'Developed and enhanced financial systems, focusing on credit card transactions processing and digital banking solutions.',
@@ -81,7 +93,7 @@ const contentData: ContentContextType = {
     {
       startDate: 'OCT 2012',
       endDate: 'Aug 2017',
-      companyName: 'Algar Telecom',
+      organization: 'Algar Telecom',
       jobRole: 'Senior Software Engineer',
       description:
         'Progressed from junior to senior developer, working on diverse projects and continuously expanding technical expertise.',
@@ -90,7 +102,7 @@ const contentData: ContentContextType = {
     {
       startDate: 'JUN 2011',
       endDate: 'SEP 2012',
-      companyName: 'Kyros Tecnologia',
+      organization: 'Kyros Tecnologia',
       jobRole: 'Intern',
       description:
         'Worked on an outsourced team for Algar Telecom, contributing to the Comverse Kenan FX billing system',

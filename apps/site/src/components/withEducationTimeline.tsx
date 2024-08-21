@@ -7,10 +7,10 @@ import { useContent } from '../contexts/ContentContext';
 
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 
-const WithExperienceTimeline: FC = () => {
-  const { workExperience: experiences } = useContent();
+const WithEducationTimeline: FC = () => {
+  const { education } = useContent();
 
-  return <ExperienceTimeline experiences={experiences} />;
+  return <ExperienceTimeline experiences={education} />;
 };
 
-export default WithExperienceTimeline;
+export default WithEducationTimeline;

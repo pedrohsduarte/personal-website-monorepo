@@ -18,7 +18,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
               <div className='relative h-6 w-6'>
                 <Image
                   src={exp.logo}
-                  alt={`${exp.companyName} logo`}
+                  alt={`${exp.organization} logo`}
                   fill
                   sizes='2rem'
                   style={{
@@ -41,7 +41,7 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
             </div>
             <h3 className='text-xl font-bold'>{exp.jobRole}</h3>
             <h4 className='text-lg font-semibold text-gray-600 dark:text-gray-400'>
-              {exp.companyName}
+              {exp.organization}
             </h4>
             <p className='mt-2 text-gray-700 dark:text-gray-300'>{exp.description}</p>
           </div>
