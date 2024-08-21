@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Language as LaguangeType } from '@/contexts/ContentContext';
 import CircularProgressBar from '../Common/CircularProgressBar';
+
+import { Language as LaguangeType } from '@/contexts/ContentContext';
 
 export type LanguagesProps = {
   languages: LaguangeType[];

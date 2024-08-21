@@ -3,9 +3,9 @@ import React from 'react';
 
 import WithDownloadCVButton from '@/components/withDownloadCVButton';
 import WithEducationTimeline from '@/components/withEducationTimeline';
+import WithLanguages from '@/components/withLanguages';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
 import WithTechnicalSkills from '@/components/withTechnicalSkills';
-import WithLanguages from '@/components/withLanguages';
 
 export const metadata: Metadata = {
   title: 'Resume',
