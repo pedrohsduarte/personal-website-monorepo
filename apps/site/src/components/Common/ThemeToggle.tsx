@@ -9,7 +9,7 @@ const ThemeToggle: FC = () => {
   const { theme, setTheme, effectiveTheme } = useTheme();
 
   const cycleTheme = () => {
-    const themes: Theme[] = ['light', 'dark', 'system'];
+    const themes: Theme[] = ['dark', 'light', 'system'];
     const nextIndex = (themes.indexOf(theme) + 1) % themes.length;
     setTheme(themes[nextIndex]);
   };
