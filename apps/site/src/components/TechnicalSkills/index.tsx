@@ -27,7 +27,9 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ skills }) => {
             <div key={`skill-${skill.name}`} className='flex w-full items-center justify-between'>
               <div className='flex items-center gap-3'>
                 <Icon icon={skill.icon} size={26} color='#71717a' grayscale={true} />
-                <span className='inline-block whitespace-nowrap font-bold'>{skill.name}</span>
+                <span className='sm:text-md lg:text-md inline-block whitespace-nowrap font-bold md:text-xs '>
+                  {skill.name}
+                </span>
               </div>
               <div className='w-20'>
                 <LinearProgressBar progress={skill.progress}></LinearProgressBar>

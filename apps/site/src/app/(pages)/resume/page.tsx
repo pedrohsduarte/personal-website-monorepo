@@ -15,14 +15,14 @@ const Resume: React.FC = () => {
   return (
     <div className='w-full space-y-16'>
       <h1 className='text-5xl font-bold'>My Resume</h1>
-      <div className='flex w-full flex-col gap-2 sm:flex-row'>
-        <div className='w-full space-y-16 md:w-3/4'>
+      <div className='flex w-full flex-col gap-10 sm:flex-row'>
+        <div className='w-full space-y-16 md:w-[70%]'>
           <h2 className='text-2xl font-bold'>Education</h2>
           <WithEducationTimeline />
           <h2 className='text-2xl font-bold'>Professional Experience</h2>
           <WithProfessionalExperienceTimeline />
         </div>
-        <div className='flex w-full flex-col gap-2 md:w-1/4'>
+        <div className='flex w-full flex-col gap-2 md:w-[30%]'>
           <WithDownloadCVButton />
           <WithLanguages />
           <WithTechnicalSkills />
