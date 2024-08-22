@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-import { Suspense } from 'react';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import './globals.css';
 
 import Container from '@/components/Container';
 import { CookieConsentBanner } from '@/components/CookiConsentBanner';
-import { GoogleTagManager } from '@/components/GoogleTagManager';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
@@ -83,9 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {GTM_ID && (
                   <>
                     <CookieConsentBanner />
-                    <Suspense fallback={null}>
-                      <GoogleTagManager GTM_ID={GTM_ID} />
-                    </Suspense>
+                    <GoogleTagManager gtmId={GTM_ID} />
                   </>
                 )}
               </main>
