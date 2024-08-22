@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import { Suspense } from 'react';
 
 import './globals.css';
 
@@ -82,7 +83,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {GTM_ID && (
                   <>
                     <CookieConsentBanner />
-                    <GoogleTagManager GTM_ID={GTM_ID} />
+                    <Suspense fallback={null}>
+                      <GoogleTagManager GTM_ID={GTM_ID} />
+                    </Suspense>
                   </>
                 )}
               </main>

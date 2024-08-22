@@ -38,6 +38,8 @@ export const CookieConsentBanner: React.FC = () => {
       onAccept={handleAccept}
       onDecline={handleDecline}
       enableDeclineButton
+      buttonStyle={{ backgroundColor: '#2563eb', color: 'white' }}
+      declineButtonStyle={{ backgroundColor: '#727272', color: 'white' }}
     >
       This site uses cookies to enhance your experience. By continuing to visit this site you agree
       to the use of cookies.

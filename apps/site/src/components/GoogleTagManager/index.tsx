@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ConsentTypes } from '@/lib/consent/consentManager';
 import { useConsent } from '@/lib/consent/useConsent';
@@ -21,15 +21,23 @@ export const GoogleTagManager: React.FC<GoogleTagManagerProps> = ({ GTM_ID }) =>
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const hasAnalyticsConsent = useConsent(ConsentTypes.ANALYTICS);
+  const [currentPath, setCurrentPath] = useState<string | null>(null);
 
   useEffect(() => {
     if (hasAnalyticsConsent && pathname) {
-      window.dataLayer.push({
-        event: 'pageview',
-        page: pathname + searchParams.toString(),
-      });
+      setCurrentPath(pathname + searchParams.toString());
     }
   }, [pathname, searchParams, hasAnalyticsConsent]);
+
+  useEffect(() => {
+    if (currentPath && typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'pageview',
+        page: currentPath,
+      });
+    }
+  }, [currentPath]);
 
   if (!hasAnalyticsConsent) {
     return null;
