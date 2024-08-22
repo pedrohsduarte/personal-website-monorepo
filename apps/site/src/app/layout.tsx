@@ -4,6 +4,8 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 
 import Container from '@/components/Container';
+import { CookieConsentBanner } from '@/components/CookiConsentBanner';
+import { GoogleTagManager } from '@/components/GoogleTagManager';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import { ContentProvider } from '@/contexts/ContentContext';
@@ -12,7 +14,7 @@ import { applyCustomStyle } from '@/utils/styles';
 
 export const metadata: Metadata = {
   title: {
-    default: `Pedro Duarte - Software engineer, architect, and team leader`,
+    default: `Pedro Duarte - Software engineer, tech enthusiast, and user experience advocate`,
     template: '%s - Pedro Duarte',
   },
 };
@@ -20,6 +22,8 @@ export const metadata: Metadata = {
 const inter = Open_Sans({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+
   return (
     <html lang='en' className='h-full'>
       <head>
@@ -75,6 +79,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </header>
               <main className='flex-auto'>
                 <Container>{children}</Container>
+                {GTM_ID && (
+                  <>
+                    <CookieConsentBanner />
+                    <GoogleTagManager GTM_ID={GTM_ID} />
+                  </>
+                )}
               </main>
               <WithFooter />
             </div>

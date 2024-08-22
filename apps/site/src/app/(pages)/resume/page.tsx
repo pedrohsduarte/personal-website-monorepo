@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const Resume: React.FC = () => {
   return (
     <div className='w-full space-y-16'>
-      <h1 className='text-5xl font-bold'>My Resume</h1>
+      <h1 className='text-5xl font-bold'>Resume</h1>
       <div className='flex w-full flex-col gap-10 sm:flex-row'>
         <div className='w-full space-y-16 md:w-[70%]'>
           <h2 className='text-2xl font-bold'>Education</h2>

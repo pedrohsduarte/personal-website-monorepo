@@ -80,6 +80,10 @@ export const contentData: ContentContextType = {
       name: 'English',
       level: 'Fluent',
     },
+    {
+      name: 'Spanish',
+      level: 'Intermediate',
+    },
   ],
   education: [
     {
