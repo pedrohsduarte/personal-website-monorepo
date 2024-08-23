@@ -9,9 +9,9 @@ applications:
             - nvm use 20
             - cd ../..
             - yarn global add turbo
-            - yarn install
+            - yarn install --frozen-lockfile
             - cd apps/site
-            - yarn install
+            - yarn install --frozen-lockfile --production=false
         build:
           commands:
             - nvm install 20
