@@ -26,8 +26,14 @@
     "turbo": "^2.0.14"
   },
   "packageManager": "yarn@1.22.22",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/tailwindcss",
+      "**/@tailwindcss/**"
+    ]
+  }
 }
