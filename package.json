@@ -30,10 +30,6 @@
     "packages": [
       "apps/*",
       "packages/*"
-    ],
-    "nohoist": [
-      "**/tailwindcss",
-      "**/@tailwindcss/**"
     ]
   }
 }
