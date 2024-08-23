@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +17,36 @@ import Counter from '@/components/Counter';
 import Icon from '@/components/Icon';
 import ShareButton from '@/components/ShareButton';
 
+const CodeBlock = dynamic(() => import('@/components/CodeBlock'), { ssr: false });
+
 const components = {
+  // disable eslint for the next line because it's a valid use case
+  h1: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h1 className='my-4 text-4xl font-bold' {...props} />
+  ),
+  h2: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h2 className='my-3 text-3xl font-semibold' {...props} />
+  ),
+  h3: (props: React.HTMLProps<HTMLHeadingElement>) => (
+    <h3 className='my-2 text-2xl font-semibold' {...props} />
+  ),
+  p: (props: React.HTMLProps<HTMLParagraphElement>) => <p className='my-2' {...props} />,
+  ul: (props: React.HTMLProps<HTMLUListElement>) => (
+    <ul className='my-2 list-inside list-disc' {...props} />
+  ),
+  li: (props: React.HTMLProps<HTMLLIElement>) => <li className='my-1' {...props} />,
+  a: (props: React.HTMLProps<HTMLAnchorElement>) => (
+    <a className='text-blue-600 hover:underline' {...props} />
+  ),
+  pre({ ...props }) {
+    return <>{props.children}</>;
+  },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  code: ({ className, ...props }: any) => {
+    const match = /language-(\w+)/.exec(className || '');
+    const language = match ? match[1] : 'text';
+    return <CodeBlock language={language} {...props} />;
+  },
   Counter,
 };
 
@@ -132,7 +162,7 @@ export default async function Article({ params }: { params: { slug: string } }) 
         </div>
       )}
 
-      <article className='prose prose-lg max-w-none'>
+      <article className='prose prose-lg max-w-none dark:prose-invert'>
         <MDXRemote source={content} components={components} />
       </article>
     </div>

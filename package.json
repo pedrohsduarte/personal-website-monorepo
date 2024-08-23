@@ -23,7 +23,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5",
     "prettier-config-custom": "*",
-    "turbo": "^2.0.12"
+    "turbo": "^2.0.14"
   },
   "packageManager": "yarn@1.22.22",
   "workspaces": [
