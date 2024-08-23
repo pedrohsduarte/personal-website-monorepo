@@ -15,8 +15,8 @@ const WithDownloadCVButton: React.FC = () => {
         onClick={() => handleDownload('CV_Pedro_Duarte.pdf', '/pdfs/cv.pdf')}
         className='flex items-center justify-center gap-1 rounded-md border border-zinc-200 p-4 dark:border-zinc-700'
       >
-        <span className='text-sm font-bold'>Download CV</span>
         <Download size={16} />
+        <span className='text-sm font-bold'>Download CV</span>
       </button>
     )
   );
