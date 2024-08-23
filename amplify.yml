@@ -10,6 +10,8 @@ applications:
             - cd ../..
             - yarn global add turbo
             - yarn install
+            - cd apps/site
+            - yarn install
         build:
           commands:
             - nvm install 20
