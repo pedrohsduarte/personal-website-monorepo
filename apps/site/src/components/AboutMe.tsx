@@ -40,26 +40,30 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
           </h1>
           <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Phasellus curabitur viverra
-              ultrices lobortis risus. Arcu nunc ridiculus condimentum pulvinar faucibus ipsum.
-              Himenaeos dictum nec at nullam bibendum erat tincidunt phasellus.
+              Welcome to my site! Here I share a bit about me and my thoughts on software
+              engineering. Feel free to explore my articles and resume to learn more about my work
+              and ideas.
             </p>
             <p>
-              Condimentum senectus primis etiam, parturient condimentum magnis. Nibh platea sodales
-              donec diam leo quis arcu. Cursus magna neque nulla nascetur curae iaculis. Aptent
-              semper magna ac habitant dui; eleifend aliquam aptent. Metus condimentum eros interdum
-              consectetur posuere molestie scelerisque accumsan. Arcu natoque auctor rutrum velit,
-              interdum condimentum.
+              In software architecture, I’ve learned there’s no one-size-fits-all solution. It’s
+              about context, options, and trade-offs. Modern engineering demands both micro and
+              macro thinking, and being able to compare opposing ideas.
             </p>
             <p>
-              Eget auctor nec etiam nullam ac adipiscing sociosqu massa. Sit blandit feugiat
-              fermentum lorem duis. Senectus torquent euismod aptent accumsan maecenas pharetra
-              suscipit natoque. Adipiscing dolor aenean euismod conubia justo porta.
+              While there’s a wealth of great resources in our field, I believe real-world
+              challenges are the best teachers. For example, building an e-commerce site from
+              scratch taught me more about system design than any textbook could. Embracing such
+              challenges and giving our best effort leads to growth and fulfillment.
             </p>
             <p>
-              Porta nisl hac elit eleifend senectus proin risus nec lacinia. Phasellus ultricies
-              adipiscing vel sed lorem malesuada sapien phasellus eu. Semper maecenas eleifend
-              ullamcorper penatibus fermentum sagittis vivamus.
+              I’m passionate about using technology to make our lives better. Arthur C. Clarke’s
+              insight <i>“Any sufficiently advanced technology is indistinguishable from magic”</i>{' '}
+              deeply reasonates with me. It encapsulates one of my goals: to create software that
+              positively impacts the world, even if it’s just a small part.
+            </p>
+            <p>
+              I’m always eager to learn and grow. If you have a project involving cloud architecture
+              or a cool app that you think I could help with, I’d love to hear about it!
             </p>
           </div>
         </div>

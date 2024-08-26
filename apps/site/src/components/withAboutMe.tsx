@@ -17,7 +17,7 @@ const WithAboutMe: FC = () => {
   // create github, linkedin, x, and email icons for AboutMe
   const socialLinks = [
     xUrl ? { text: 'Follow on X', href: xUrl, icon: XIcon } : null,
-    githubUrl ? { text: 'Follow on Github', href: githubUrl, icon: GithubIcon } : null,
+    githubUrl ? { text: 'Follow on GitHub', href: githubUrl, icon: GithubIcon } : null,
     linkedInUrl ? { text: 'Connect on LinkedIn', href: linkedInUrl, icon: LinkedinIcon } : null,
     email ? { text: email, href: `mailto:${email}`, icon: Mail } : null,
   ].filter(link => link != null);
