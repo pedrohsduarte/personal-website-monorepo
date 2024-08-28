@@ -36,6 +36,13 @@ export type Experience = {
   logo: string;
 };
 
+export type Publication = {
+  title: string;
+  publisher: string;
+  date: string;
+  link: string;
+};
+
 export type ContentContextType = {
   name: string;
   jobTitle: string;
@@ -49,6 +56,7 @@ export type ContentContextType = {
   education: Experience[];
   professionalExperience: Experience[];
   technologySkills: TechnologySkill[];
+  publications?: Publication[];
 };
 
 export type NavItem = {
@@ -189,6 +197,14 @@ export const contentData: ContentContextType = {
       description: 'Worked on an outsourced team, developing new modules of a billing system.',
       technologies: 'Oracle, SQL, Shell script',
       logo: '/images/logos/kyros-tecnologia.png',
+    },
+  ],
+  publications: [
+    {
+      title: 'An Architecture for Monitoring and Improving Public Transportation Systems',
+      publisher: 'IEEE (AINA)',
+      date: '2016',
+      link: 'https://ieeexplore.ieee.org/document/7474181',
     },
   ],
   technologySkills: [
