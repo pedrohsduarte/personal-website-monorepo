@@ -12,7 +12,7 @@ import PythonIcon from '@/assets/icons/python.svg';
 import ReactIcon from '@/assets/icons/react.svg';
 import TerraformIcon from '@/assets/icons/terraform.svg';
 import TypeScriptIcon from '@/assets/icons/typescript.svg';
-import { TechnicalSkill } from '@/components/TechnicalSkills';
+import { TechnologySkill } from '@/components/TechnologySkills';
 
 export type CVFile = {
   fileName: string;
@@ -30,6 +30,9 @@ export type Experience = {
   organization: string;
   jobRole?: string;
   description: string;
+  detailsTitle?: string;
+  details?: string[];
+  technologies?: string;
   logo: string;
 };
 
@@ -45,7 +48,7 @@ export type ContentContextType = {
   languages: Language[];
   education: Experience[];
   professionalExperience: Experience[];
-  technicalSkills: TechnicalSkill[];
+  technologySkills: TechnologySkill[];
 };
 
 export type NavItem = {
@@ -56,7 +59,7 @@ export type NavItem = {
 export const navigationItems = [
   { label: 'Home', href: '/' },
   { label: 'Articles', href: '/articles' },
-  { label: 'Resume', href: '/resume' },
+  { label: 'CV', href: '/cv' },
 ];
 
 export const contentData: ContentContextType = {
@@ -73,12 +76,12 @@ export const contentData: ContentContextType = {
   },
   languages: [
     {
-      name: 'Portuguese',
+      name: 'English',
       level: 'Native',
     },
     {
-      name: 'English',
-      level: 'Fluent',
+      name: 'Portuguese',
+      level: 'Native',
     },
     {
       name: 'Spanish',
@@ -103,7 +106,15 @@ export const contentData: ContentContextType = {
       organization: 'Entrustody',
       jobRole: 'Software Architect',
       description:
-        'Lead development team in creating fintech solutions, collaborating with C-level executives on business strategy and technology alignment.',
+        'Spearhead development of fintech solutions, working closely with leadership on aligning tech with business goals.',
+      detailsTitle: 'Key Project: BI & Analytics App for RIAs and Advisors',
+      details: [
+        'Developed comprehensive ETL pipeline using Azure technologies',
+        'Implemented Medallion architecture and Delta Lake for improved data handling',
+        'Designed microservices architecture to enhance system flexibility',
+      ],
+      technologies:
+        'Azure (Synapse Analytics, ADLS, Key Vault, Function App), Apache Spark, Delta Lake, PostgreSQL, Node.js, TypeScript, Docker, Next.js, Terraform',
       logo: '/images/logos/entrustody.png',
     },
     {
@@ -112,7 +123,15 @@ export const contentData: ContentContextType = {
       organization: 'Exacode',
       jobRole: 'Co-founder & Software Architect',
       description:
-        'Led all aspects of IT consultancy, including architecture, development, project management, sales, and operations.',
+        'Led all aspects of IT consultancy, from solution design to project delivery for diverse client needs.',
+      detailsTitle: 'Key Projects:',
+      details: [
+        'Designed serverless e-commerce platform processing $20M+ annual transactions',
+        'Architected health tracking mobile app, achieving 92% user retention rate, and rated 4.9/5 on Play Store and App Store',
+        'Developed internal business application for a multinational client company, optimizing negotiations by',
+      ],
+      technologies:
+        'AWS (Lambda, ECS, DynamoDB, Aurora Serverless), GCP, Firebase, Java, Node.js, React, Flutter, Terraform',
       logo: '/images/logos/exacode.png',
     },
     {
@@ -122,6 +141,14 @@ export const contentData: ContentContextType = {
       jobRole: 'Software Architect',
       description:
         'Led development teams in building an ecosystem for the supply chain industry, focusing on solutions for manufacturers, suppliers, and retailers.',
+      detailsTitle: 'Key Projects:',
+      details: [
+        'Implemented SSO solution using Keycloak, enhancing applications’ security and reducing login issues',
+        'Architected B2B platform for configuring complex sales campaigns',
+        'Designed continuous delivery pipelines for core services',
+      ],
+      technologies:
+        'AWS (Lambda, S3, EC2, ECS, IAM, DynamoDB), Terraform, Docker, Keycloak, Python, Java, Node.js, TypeScript',
       logo: '/images/logos/yandeh.png',
     },
     {
@@ -130,7 +157,12 @@ export const contentData: ContentContextType = {
       organization: 'Hub Fintech',
       jobRole: 'Senior Software Engineer',
       description:
-        'Developed and enhanced financial systems, focusing on credit card transactions processing and digital banking solutions.',
+        'Developed core components for credit card processing platform and digital banking solutions.',
+      detailsTitle: 'Key Achievements:',
+      details: [
+        'Developed ISO 8583 compliant transaction processing systems, handling thousands of daily transactions',
+      ],
+      technologies: 'Java, RabbitMQ, Angular, MySQL, JUnit',
       logo: '/images/logos/hub-fintech.png',
     },
     {
@@ -139,7 +171,14 @@ export const contentData: ContentContextType = {
       organization: 'Algar Telecom',
       jobRole: 'Senior Software Engineer',
       description:
-        'Progressed from junior to senior developer, working on diverse projects and continuously expanding technical expertise.',
+        'Progressed from junior to senior developer, contributing to diverse OSS/BSS telecom projects.',
+      detailsTitle: 'Key Achievements:',
+      details: [
+        'Engineered an inter-system communication service, reducing data transfer errors',
+        'Enhanced and customized modules for a complex billing system',
+        'Led a bus location tracking project using Raspberry Pi',
+      ],
+      technologies: 'Java, Spring, Angular, PostgreSQL, Oracle, Docker, REST, SOAP',
       logo: '/images/logos/algar-telecom.png',
     },
     {
@@ -147,12 +186,12 @@ export const contentData: ContentContextType = {
       endDate: 'SEP 2012',
       organization: 'Kyros Tecnologia',
       jobRole: 'Intern',
-      description:
-        'Worked on an outsourced team for Algar Telecom, contributing to the Comverse Kenan FX billing system',
+      description: 'Worked on an outsourced team, developing new modules of a billing system.',
+      technologies: 'Oracle, SQL, Shell script',
       logo: '/images/logos/kyros-tecnologia.png',
     },
   ],
-  technicalSkills: [
+  technologySkills: [
     {
       name: 'React',
       icon: ReactIcon,

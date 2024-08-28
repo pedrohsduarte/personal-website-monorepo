@@ -40,9 +40,8 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
           </h1>
           <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>
-              Welcome to my site! Here I share a bit about me and my thoughts on software
-              engineering. Feel free to explore my articles and resume to learn more about my work
-              and ideas.
+              Welcome! Here I share a bit about me and my thoughts on software engineering. Feel
+              free to explore my articles and CV to learn more about my work and ideas.
             </p>
             <p>
               In software architecture, I’ve learned there’s no one-size-fits-all solution. It’s

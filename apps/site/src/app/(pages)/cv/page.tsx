@@ -5,16 +5,16 @@ import WithDownloadCVButton from '@/components/withDownloadCVButton';
 import WithEducationTimeline from '@/components/withEducationTimeline';
 import WithLanguages from '@/components/withLanguages';
 import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
-import WithTechnicalSkills from '@/components/withTechnicalSkills';
+import WithTechnologySkills from '@/components/withTechnologySkills';
 
 export const metadata: Metadata = {
-  title: 'Resume',
+  title: 'Curriculum Vitae',
 };
 
-const Resume: React.FC = () => {
+const CurriculumVitae: React.FC = () => {
   return (
     <div className='w-full space-y-16'>
-      <h1 className='text-5xl font-bold'>Resume</h1>
+      <h1 className='text-5xl font-bold'>Curriculum Vitae</h1>
       <div className='flex w-full flex-col gap-10 sm:flex-row'>
         <div className='w-full space-y-16 md:w-[70%]'>
           <h2 className='text-2xl font-bold'>Education</h2>
@@ -25,11 +25,11 @@ const Resume: React.FC = () => {
         <div className='flex w-full flex-col gap-2 md:w-[30%]'>
           <WithDownloadCVButton />
           <WithLanguages />
-          <WithTechnicalSkills />
+          <WithTechnologySkills />
         </div>
       </div>
     </div>
   );
 };
 
-export default Resume;
+export default CurriculumVitae;

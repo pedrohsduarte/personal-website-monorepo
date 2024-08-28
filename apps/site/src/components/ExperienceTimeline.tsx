@@ -44,6 +44,21 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ experiences }) 
               {exp.organization}
             </h4>
             <p className='mt-2 text-gray-700 dark:text-gray-300'>{exp.description}</p>
+            {exp.detailsTitle && (
+              <div className='mt-4'>
+                <h5 className='font-semibold'>{exp.detailsTitle}</h5>
+                {exp.details && (
+                  <ul className='mt-2 list-inside list-disc pl-4'>
+                    {exp.details?.map((detail, detailIndex) => <li key={detailIndex}>{detail}</li>)}
+                  </ul>
+                )}
+              </div>
+            )}
+            {exp.technologies && (
+              <div className='mt-2'>
+                <span className='font-semibold'>Technologies:</span> {exp.technologies}
+              </div>
+            )}
           </div>
         </div>
       ))}

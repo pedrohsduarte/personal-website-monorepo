@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 import LinearProgressBar from '@/components/Common/LinearProgressBar';
 import Icon, { IconType } from '@/components/Icon';
 
-export type TechnicalSkill = {
+export type TechnologySkill = {
   icon: IconType;
   name: string;
   progress: number;
 };
 
-export type TechnicalSkillsProps = {
-  skills: TechnicalSkill[];
+export type TechnologySkillsProps = {
+  skills: TechnologySkill[];
 };
 
-const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ skills }) => {
+const TechnologySkills: React.FC<TechnologySkillsProps> = ({ skills }) => {
   const [showAll, setShowAll] = useState(false);
 
   const sortedSkills = skills.sort((a, b) => {
@@ -25,7 +25,7 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ skills }) => {
 
   return (
     <div className='space-y-4 rounded-md border border-zinc-200 p-4 dark:border-zinc-700'>
-      <h3 className='text-lg font-bold'>Technical Skills</h3>
+      <h3 className='text-lg font-bold'>Technology Skills</h3>
       <div className='flex flex-col gap-4'>
         {displayedSkills.map(skill => (
           <div key={`skill-${skill.name}`} className='flex w-full items-center justify-between'>
@@ -55,4 +55,4 @@ const TechnicalSkills: React.FC<TechnicalSkillsProps> = ({ skills }) => {
   );
 };
 
-export default TechnicalSkills;
+export default TechnologySkills;
