@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import React from 'react';
 
 import WithCertifications from '@/components/Connectors/withCertifications';
+import WithCVSummary from '@/components/Connectors/withCVSummary';
 import WithDownloadCVButton from '@/components/Connectors/withDownloadCVButton';
 import WithEducationTimeline from '@/components/Connectors/withEducationTimeline';
 import WithLanguages from '@/components/Connectors/withLanguages';
@@ -19,6 +20,8 @@ const CurriculumVitae: React.FC = () => {
       <h1 className='text-5xl font-bold'>Curriculum Vitae</h1>
       <div className='flex w-full flex-col gap-10 sm:flex-row'>
         <div className='w-full space-y-16 md:w-[70%]'>
+          <h2 className='text-2xl font-bold'>Summary</h2>
+          <WithCVSummary />
           <h2 className='text-2xl font-bold'>Education</h2>
           <WithEducationTimeline />
           <h2 className='text-2xl font-bold'>Professional Experience</h2>

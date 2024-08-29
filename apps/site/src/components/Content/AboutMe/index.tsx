@@ -38,7 +38,7 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
           <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
             {title}
           </h1>
-          <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
+          <div className='mt-10 space-y-7 text-justify text-base text-zinc-600 dark:text-zinc-400'>
             <p>
               Welcome! Here I share a bit about me and my thoughts on software engineering. Feel
               free to explore my articles and CV to learn more about my work and ideas.

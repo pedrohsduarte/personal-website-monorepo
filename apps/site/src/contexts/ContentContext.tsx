@@ -60,6 +60,7 @@ export type ContentContextType = {
   xUrl?: string;
   email?: string;
   cvFile?: CVFile;
+  cvSummary: string;
   languages: Language[];
   education: Experience[];
   professionalExperience: Experience[];
@@ -91,6 +92,8 @@ export const contentData: ContentContextType = {
     fileName: 'CV_Pedro_Duarte.pdf',
     fileUrl: '/pdfs/cv.pdf',
   },
+  cvSummary:
+    'Technology leader and hands-on, individual contributor with over a decade of software engineering and architectural expertise in senior technology leadership roles. Adept at bridging the gap between technical and business units, I bring a passion for continuous learning and a proven track record of leading high-performance teams to innovate and implement well-architected technology solutions.',
   languages: [
     {
       name: 'English',
