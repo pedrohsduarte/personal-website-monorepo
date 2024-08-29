@@ -43,6 +43,14 @@ export type Publication = {
   link: string;
 };
 
+export type Certification = {
+  title: string;
+  issuer: string;
+  date: string;
+  logo: string;
+  verificationLink: string;
+};
+
 export type ContentContextType = {
   name: string;
   jobTitle: string;
@@ -57,6 +65,7 @@ export type ContentContextType = {
   professionalExperience: Experience[];
   technologySkills: TechnologySkill[];
   publications?: Publication[];
+  certifications?: Certification[];
 };
 
 export type NavItem = {
@@ -205,6 +214,31 @@ export const contentData: ContentContextType = {
       publisher: 'IEEE (AINA)',
       date: '2016',
       link: 'https://ieeexplore.ieee.org/document/7474181',
+    },
+  ],
+  certifications: [
+    {
+      title: 'Exam Certificate: ITIL® Foundation Certificate in IT Service Management (ITILF)',
+      issuer: 'EXIN',
+      date: 'Jul 2013',
+      logo: '/images/logos/exin.png',
+      verificationLink:
+        'https://mylogin.exin.nl/polarserver.asp?Script=GetLinkedInPost&CandidateCertificateGUID=980A9177-BABB-4019-941A-92EC75A42D83&ts=391936703',
+    },
+    {
+      title: 'Certified Linux Administrator (LPIC-1)',
+      issuer: 'Linux Professional Institute',
+      date: 'Apr 2013',
+      logo: '/images/logos/lpi.jpeg',
+      verificationLink:
+        'https://cs.lpi.org/caf/Xamman/certification/verify/LPI000278778/td7jzgyws6',
+    },
+    {
+      title: 'Oracle Certified Professional, Java SE 6 Programmer',
+      issuer: 'Oracle',
+      date: 'Dec 2012',
+      logo: '/images/logos/oracle.jpeg',
+      verificationLink: 'https://www.credly.com/badges/22c4e296-51f4-4586-bb0e-332741aef4db',
     },
   ],
   technologySkills: [
