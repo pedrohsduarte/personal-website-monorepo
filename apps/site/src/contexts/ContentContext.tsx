@@ -76,9 +76,12 @@ export type NavItem = {
 
 export const navigationItems = [
   { label: 'Home', href: '/' },
-  { label: 'Articles', href: '/articles' },
   { label: 'CV', href: '/cv' },
 ];
+
+if (process.env.ENV !== 'prod') {
+  navigationItems.splice(1, 0, { label: 'Articles', href: '/articles' });
+}
 
 export const contentData: ContentContextType = {
   name: 'Pedro Duarte',
