@@ -12,13 +12,13 @@ type SocialLinks = {
   icon: IconType;
 };
 
-type AboutMeProps = {
+type HomeInfoProps = {
   personName: string;
   title: string;
   socialLinks: SocialLinks[];
 };
 
-const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
+const HomeInfo: FC<HomeInfoProps> = ({ personName, title, socialLinks }) => {
   return (
     <div className='mx-auto max-w-2xl lg:max-w-5xl'>
       <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
@@ -41,7 +41,7 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
           <div className='mt-10 space-y-7 text-justify text-base text-zinc-600 dark:text-zinc-400'>
             <p>
               Welcome! Here I share a bit about me and my thoughts on software engineering. Feel
-              free to explore my articles and CV to learn more about my work and ideas.
+              free to explore my blog posts and CV to learn more about my work and ideas.
             </p>
             <p>
               In software architecture, I’ve learned there’s no one-size-fits-all solution. It’s
@@ -99,4 +99,4 @@ const AboutMe: FC<AboutMeProps> = ({ personName, title, socialLinks }) => {
   );
 };
 
-export default AboutMe;
+export default HomeInfo;

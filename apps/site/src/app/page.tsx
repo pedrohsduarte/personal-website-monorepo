@@ -1,5 +1,5 @@
-import WithAboutMe from '@/components/Connectors/withAboutMe';
+import WithHomeInfo from '@/components/Connectors/withHomeInfo';
 
 export default function Home() {
-  return <WithAboutMe />;
+  return <WithHomeInfo />;
 }

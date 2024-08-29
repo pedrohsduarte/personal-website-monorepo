@@ -11,8 +11,8 @@ services:
           path: ./apps/site/src
           target: /usr/src/root-workspace/apps/site/src
         - action: sync
-          path: ./apps/site/articles
-          target: /usr/src/root-workspace/apps/site/articles
+          path: ./apps/site/blog
+          target: /usr/src/root-workspace/apps/site/blog
         - action: sync
           path: ./apps/site/public
           target: /usr/src/root-workspace/apps/site/public

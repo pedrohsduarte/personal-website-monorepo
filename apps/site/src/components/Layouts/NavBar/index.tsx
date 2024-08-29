@@ -55,7 +55,7 @@ const NavBar: FC<NavbarProps> = ({ navItems }) => {
               )}
             </div>
           </div>
-          <div className='hidden items-center space-x-4 md:flex'>
+          <div className='hidden items-center gap-8 md:flex'>
             {navItems.map(item => (
               <Link
                 key={item.href}

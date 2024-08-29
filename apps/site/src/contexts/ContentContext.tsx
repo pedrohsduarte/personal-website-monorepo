@@ -54,11 +54,13 @@ export type Certification = {
 export type ContentContextType = {
   name: string;
   jobTitle: string;
-  aboutMeTitle: string;
+  homeInfoTitle: string;
   githubUrl?: string;
   linkedInUrl?: string;
   xUrl?: string;
   email?: string;
+  shortBio: string[];
+  siteDetails: string[];
   cvFile?: CVFile;
   cvSummary: string;
   languages: Language[];
@@ -77,20 +79,30 @@ export type NavItem = {
 export const navigationItems = [
   { label: 'Home', href: '/' },
   { label: 'CV', href: '/cv' },
+  { label: 'About', href: '/about' },
 ];
 
-if (process.env.ENV !== 'prod') {
-  navigationItems.splice(1, 0, { label: 'Articles', href: '/articles' });
+console.log(process.env.ENV);
+
+if (process.env.ENV === 'dev') {
+  navigationItems.splice(1, 0, { label: 'Blog', href: '/blog' });
 }
 
 export const contentData: ContentContextType = {
   name: 'Pedro Duarte',
   jobTitle: 'Software Architect',
-  aboutMeTitle: 'Hi, I’m Pedro Duarte',
+  homeInfoTitle: 'Hi, I’m Pedro Duarte',
   githubUrl: 'https://github.com/pedrohsduarte',
   linkedInUrl: 'https://www.linkedin.com/in/pedrohsduarte/',
   xUrl: 'https://x.com/femto51',
   email: 'pedro@exacode.com.br',
+  shortBio: [
+    'Pedro is a technology leader and hands-on, individual contributor with over a decade of software engineering and architectural expertise in senior technology leadership roles. Adept at bridging the gap between technical and business units, Pedro brings a passion for continuous learning and a proven track record of leading high-performance teams to innovate and implement well-architected technology solutions.',
+  ],
+  siteDetails: [
+    'This site was built using Next.js. You can find the monorepo containing all the code <a class="text-blue-600" href="https://github.com/pedrohsduarte/personal-website-monorepo">on GitHub</a>. It’s hosted on AWS Amplify, which includes global CDN and SSL certificates.',
+    'The site uses Google Analytics, but does not collect personal information. It configures Google Analytics to anonymize IP addresses and to not share data with Google.',
+  ],
   cvFile: {
     fileName: 'CV_Pedro_Duarte.pdf',
     fileUrl: '/pdfs/cv.pdf',

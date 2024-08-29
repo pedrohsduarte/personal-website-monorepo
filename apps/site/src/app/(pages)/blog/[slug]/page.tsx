@@ -51,7 +51,7 @@ const components = {
 };
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'articles'));
+  const files = fs.readdirSync(path.join(process.cwd(), 'blog'));
 
   return files.map(filename => ({
     slug: filename.replace('.mdx', ''),
@@ -64,10 +64,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const { slug } = params;
-  const markdownFile = fs.readFileSync(
-    path.join(process.cwd(), 'articles', `${slug}.mdx`),
-    'utf-8',
-  );
+  const markdownFile = fs.readFileSync(path.join(process.cwd(), 'blog', `${slug}.mdx`), 'utf-8');
 
   const { data: frontMatter } = matter(markdownFile);
 
@@ -99,10 +96,7 @@ function estimateReadTime(content: string) {
 
 export default async function Article({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const markdownFile = fs.readFileSync(
-    path.join(process.cwd(), 'articles', `${slug}.mdx`),
-    'utf-8',
-  );
+  const markdownFile = fs.readFileSync(path.join(process.cwd(), 'blog', `${slug}.mdx`), 'utf-8');
 
   const { data: frontMatter, content } = matter(markdownFile);
   const formattedDate = formatDate(frontMatter.date);
@@ -110,13 +104,13 @@ export default async function Article({ params }: { params: { slug: string } }) 
   const headersList = headers();
   const domain = headersList.get('host') || '';
   const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const currentUrl = `${protocol}://${domain}/articles/${slug}`;
+  const currentUrl = `${protocol}://${domain}/blog/${slug}`;
 
   return (
     <div className='container mx-auto px-4 py-8'>
       <div className='mb-8'>
         <Link
-          href='/articles'
+          href='/blog'
           className='inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 transition-colors hover:bg-gray-100'
         >
           <ChevronLeft size={16} strokeWidth={3} />
