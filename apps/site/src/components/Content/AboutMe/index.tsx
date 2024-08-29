@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-import Icon, { IconType } from '@/components/Icon';
+import Icon, { IconType } from '@/components/Common/Icon';
 
 type SocialLinks = {
   text: string;

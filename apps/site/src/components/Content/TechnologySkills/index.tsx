@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
+import Icon, { IconType } from '@/components/Common/Icon';
 import LinearProgressBar from '@/components/Common/LinearProgressBar';
-import Icon, { IconType } from '@/components/Icon';
 
 export type TechnologySkill = {
   icon: IconType;

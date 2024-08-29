@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import React from 'react';
 
-import Footer from './Footer';
+import Footer from '../Layouts/Footer';
 
 import { navigationItems, useContent } from '@/contexts/ContentContext';
 

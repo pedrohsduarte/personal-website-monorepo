@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import React from 'react';
 
-import NavBar from './NavBar';
+import NavBar from '../Layouts/NavBar';
 
 import { navigationItems } from '@/contexts/ContentContext';
 

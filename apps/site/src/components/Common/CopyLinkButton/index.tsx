@@ -2,7 +2,7 @@
 
 import { LinkIcon } from 'lucide-react';
 
-import Icon from '../Icon';
+import Icon from '@/components/Common/Icon';
 
 function CopyLinkButton({ url }: { url: string }) {
   const handleCopy = () => {

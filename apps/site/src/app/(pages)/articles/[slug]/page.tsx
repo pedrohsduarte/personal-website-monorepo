@@ -12,12 +12,12 @@ import path from 'node:path';
 import FacebookIcon from '@/assets/icons/facebook.svg';
 import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import XIcon from '@/assets/icons/x.svg';
-import CopyLinkButton from '@/components/CopyLinkButton';
-import Counter from '@/components/Counter';
-import Icon from '@/components/Icon';
-import ShareButton from '@/components/ShareButton';
+import CopyLinkButton from '@/components/Common/CopyLinkButton';
+import Icon from '@/components/Common/Icon';
+import ShareButton from '@/components/Common/ShareButton';
+import Counter from '@/components/Content/Blog/Counter';
 
-const CodeBlock = dynamic(() => import('@/components/CodeBlock'), { ssr: false });
+const CodeBlock = dynamic(() => import('@/components/Common/CodeBlock'), { ssr: false });
 
 const components = {
   // disable eslint for the next line because it's a valid use case

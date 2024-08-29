@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import WithDownloadCVButton from '@/components/withDownloadCVButton';
-import WithEducationTimeline from '@/components/withEducationTimeline';
-import WithLanguages from '@/components/withLanguages';
-import WithProfessionalExperienceTimeline from '@/components/withProfessionalExperienceTimeline';
-import WithPublications from '@/components/withPublications';
-import WithTechnologySkills from '@/components/withTechnologySkills';
+import WithDownloadCVButton from '@/components/Connectors/withDownloadCVButton';
+import WithEducationTimeline from '@/components/Connectors/withEducationTimeline';
+import WithLanguages from '@/components/Connectors/withLanguages';
+import WithProfessionalExperienceTimeline from '@/components/Connectors/withProfessionalExperienceTimeline';
+import WithPublications from '@/components/Connectors/withPublications';
+import WithTechnologySkills from '@/components/Connectors/withTechnologySkills';
 
 export const metadata: Metadata = {
   title: 'Curriculum Vitae',

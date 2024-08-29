@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 
-import Icon from './Icon';
+import Icon from '../../Common/Icon';
 
 import { Publication } from '@/contexts/ContentContext';
 

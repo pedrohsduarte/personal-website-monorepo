@@ -6,8 +6,8 @@ import GithubIcon from '@/assets/icons/github.svg';
 import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import XIcon from '@/assets/icons/x.svg';
 import Divider from '@/components/Common/Divider';
-import Container from '@/components/Container';
-import Icon, { IconType } from '@/components/Icon';
+import Icon, { IconType } from '@/components/Common/Icon';
+import Container from '@/components/Layouts/Container';
 import { NavItem } from '@/contexts/ContentContext';
 
 type SocialLinks = {

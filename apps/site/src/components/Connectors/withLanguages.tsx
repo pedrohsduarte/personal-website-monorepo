@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Languages from '@/components/Languages';
+import Languages from '@/components/Content/Languages';
 import { useContent } from '@/contexts/ContentContext';
 
 const WithLanguages: React.FC = () => {

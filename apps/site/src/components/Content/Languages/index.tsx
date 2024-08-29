@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CircularProgressBar from '../Common/CircularProgressBar';
-
+import CircularProgressBar from '@/components/Common/CircularProgressBar';
 import { Language as LaguangeType } from '@/contexts/ContentContext';
 
 export type LanguagesProps = {

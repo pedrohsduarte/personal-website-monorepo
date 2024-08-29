@@ -4,10 +4,10 @@ import { GoogleTagManager } from '@next/third-parties/google';
 
 import './globals.css';
 
-import Container from '@/components/Container';
-import { CookieConsentBanner } from '@/components/CookiConsentBanner';
-import WithFooter from '@/components/withFooter';
-import WithNavBar from '@/components/withNavBar';
+import { CookieConsentBanner } from '@/components/Common/CookieConsentBanner';
+import WithFooter from '@/components/Connectors/withFooter';
+import WithNavBar from '@/components/Connectors/withNavBar';
+import Container from '@/components/Layouts/Container';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { applyCustomStyle } from '@/utils/styles';

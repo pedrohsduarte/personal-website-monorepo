@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import TechnologySkills from './TechnologySkills';
+import TechnologySkills from '../Content/TechnologySkills';
 
 import { useContent } from '@/contexts/ContentContext';
 

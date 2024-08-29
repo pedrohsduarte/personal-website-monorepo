@@ -12,7 +12,7 @@ import PythonIcon from '@/assets/icons/python.svg';
 import ReactIcon from '@/assets/icons/react.svg';
 import TerraformIcon from '@/assets/icons/terraform.svg';
 import TypeScriptIcon from '@/assets/icons/typescript.svg';
-import { TechnologySkill } from '@/components/TechnologySkills';
+import { TechnologySkill } from '@/components/Content/TechnologySkills';
 
 export type CVFile = {
   fileName: string;
