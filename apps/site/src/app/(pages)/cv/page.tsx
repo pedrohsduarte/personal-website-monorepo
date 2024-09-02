@@ -22,10 +22,10 @@ const CurriculumVitae: React.FC = () => {
         <div className='w-full space-y-16 md:w-[70%]'>
           <h2 className='text-2xl font-bold'>Summary</h2>
           <WithCVSummary />
-          <h2 className='text-2xl font-bold'>Education</h2>
-          <WithEducationTimeline />
           <h2 className='text-2xl font-bold'>Professional Experience</h2>
           <WithProfessionalExperienceTimeline />
+          <h2 className='text-2xl font-bold'>Education</h2>
+          <WithEducationTimeline />
           <h2 className='text-2xl font-bold'>Publications</h2>
           <WithPublications />
           <h2 className='text-2xl font-bold'>Certifications</h2>
