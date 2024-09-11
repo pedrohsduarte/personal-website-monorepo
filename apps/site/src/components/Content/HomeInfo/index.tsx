@@ -41,7 +41,7 @@ const HomeInfo: FC<HomeInfoProps> = ({ personName, title, socialLinks }) => {
           <div className='mt-10 space-y-7 text-justify text-base text-zinc-600 dark:text-zinc-400'>
             <p>
               Welcome! Here I share a bit about me and my thoughts on software engineering. Feel
-              free to explore my blog posts and CV to learn more about my work and ideas.
+              free to explore to learn more about my work.
             </p>
             <p>
               In software architecture, I’ve learned there’s no one-size-fits-all solution. It’s
