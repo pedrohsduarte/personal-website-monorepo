@@ -12,7 +12,7 @@ Feel free to fork this repository and use it as a template for your own website.
 
 ## Development
 
-1. After cloning the repository, run `yarn install` to install the dependencies.
+1. After cloning the repository, run `yarn install` to install the dependencies (you can skip this step if you are using Docker).
 2. Run `yarn dev` or `yarn dev:docker` to start the development server. The app will be available at [http://localhost:3000](http://localhost:3000). Hot reloading is enabled.
 
 ## Deployment (AWS Amplify)
@@ -39,4 +39,4 @@ The content of the website can be easily changed by editing the following files:
 
 - `apps\site\src\contexts\ContentContext.tsx`: This file contains the text content of the website. The content is stored in a context to be easily accessible by all components. The content is divided into sections, and each section contains a title and a list of paragraphs. The paragraphs can contain text, links, and images.
 - `public/images`: This folder contains the images used in the website. You can replace the images with your own.
-- `public/pdf/Resume.pdf`: This is the PDF file of my resume. You can replace it with your own.
+- `public/pdf/resume.pdf`: This is the PDF file of my resume. You can replace it with your own.
