@@ -29,8 +29,7 @@ export type Experience = {
   endDate: string;
   organization: string;
   jobRole?: string;
-  description: string;
-  detailsTitle?: string;
+  description?: string;
   details?: string[];
   technologies?: string;
   logo: string;
@@ -82,8 +81,6 @@ export const navigationItems = [
   { label: 'About', href: '/about' },
 ];
 
-console.log(process.env.ENV);
-
 if (process.env.ENV === 'dev') {
   navigationItems.splice(1, 0, { label: 'Blog', href: '/blog' });
 }
@@ -104,8 +101,8 @@ export const contentData: ContentContextType = {
     'The site uses Google Analytics, but does not collect personal information. It configures Google Analytics to anonymize IP addresses and to not share data with Google.',
   ],
   cvFile: {
-    fileName: 'CV_Pedro_Duarte.pdf',
-    fileUrl: '/pdfs/cv.pdf',
+    fileName: 'Resume_Pedro_Duarte.pdf',
+    fileUrl: '/pdfs/Resume.pdf',
   },
   cvSummary:
     'Technology leader and hands-on, individual contributor with over a decade of software engineering and architectural expertise in senior technology leadership roles. Adept at bridging the gap between technical and business units, I bring a passion for continuous learning and a proven track record of leading high-performance teams to innovate and implement well-architected technology solutions.',
@@ -128,9 +125,9 @@ export const contentData: ContentContextType = {
       startDate: '2009',
       endDate: '2013',
       organization: 'Universidade Federal de Uberlândia',
-      jobRole: 'Bachelor of Computer Science',
+      jobRole: 'B.S. in Computer Science',
       description:
-        'Throughout my years at UFU, I immersed myself in a dynamic learning environment, surrounded by dedicated faculty and talented peers.',
+        'Relevant Coursework: Object Oriented Programming, Databases, Discrete Maths, Data Structures and Algorithms, Analysis of Algorithms, Operating Systems, Computer Networks, Data Mining, Image Processing.',
       logo: '/images/logos/ufu-logo.png',
     },
   ],
@@ -140,33 +137,27 @@ export const contentData: ContentContextType = {
       endDate: 'PRESENT',
       organization: 'Entrustody',
       jobRole: 'Software Architect',
-      description:
-        'Spearhead development of fintech solutions, working closely with leadership on aligning tech with business goals.',
-      detailsTitle: 'Key Project: BI & Analytics App for RIAs and Advisors',
       details: [
-        'Developed comprehensive ETL pipeline using Azure technologies',
-        'Implemented Medallion architecture and Delta Lake for improved data handling',
-        'Designed microservices architecture to enhance system flexibility',
+        'Led end-to-end development of a scalable, multi-tenant Data pipeline and Analytics solution, driving data-informed decisions for financial advisors.',
+        'Reduced annual Azure cost by 60% through strategic service selection and identifying unused resources.',
+        'Enhanced data security and compliance by migrating core legacy Azure infrastructure to a private network topology.',
       ],
       technologies:
-        'Azure (Synapse Analytics, ADLS, Key Vault, Function App), Apache Spark, Delta Lake, PostgreSQL, Node.js, TypeScript, Docker, Next.js, Terraform',
+        'Azure, AWS, TypeScript, Spark, Delta Lake, PostgreSQL, Docker, Terraform, GraphQL.',
       logo: '/images/logos/entrustody.png',
     },
     {
       startDate: 'JUL 2020',
       endDate: 'MAR 2022',
       organization: 'Exacode',
-      jobRole: 'Co-founder & Software Architect',
-      description:
-        'Led all aspects of IT consultancy, from solution design to project delivery for diverse client needs.',
-      detailsTitle: 'Key Projects:',
+      jobRole: 'Software Architect',
       details: [
-        'Designed serverless e-commerce platform processing $20M+ annual transactions',
-        'Architected health tracking mobile app, achieving 92% user retention rate, and rated 4.9/5 on Play Store and App Store',
-        'Developed internal business application for a multinational client company, optimizing negotiations by',
+        "Reduced client's expenses by over 30%, by digitalizing their operations through building a serverless e-commerce app.",
+        'Built a health tracking app, achieving 92% user retention, and 4.9-star app store rating.',
+        'Developed business system for a Fortune 500 client, accelerating deal closure velocity by 40%.',
       ],
       technologies:
-        'AWS (Lambda, ECS, DynamoDB, Aurora Serverless), GCP, Firebase, Java, Node.js, React, Flutter, Terraform',
+        'AWS, GCP, Firebase, Java, Python, TypeScript, Terraform, React, Tailwind, Flutter, Redis.',
       logo: '/images/logos/exacode.png',
     },
     {
@@ -174,16 +165,13 @@ export const contentData: ContentContextType = {
       endDate: 'JUL 2020',
       organization: 'Yandeh',
       jobRole: 'Software Architect',
-      description:
-        'Led development teams in building an ecosystem for the supply chain industry, focusing on solutions for manufacturers, suppliers, and retailers.',
-      detailsTitle: 'Key Projects:',
       details: [
-        'Implemented SSO solution using Keycloak, enhancing applications’ security and reducing login issues',
-        'Architected B2B platform for configuring complex sales campaigns',
-        'Designed continuous delivery pipelines for core services',
+        'Streamlined cross-application user experience by implementing SSO solution using Keycloak.',
+        'Optimized clients’ sales operations by architecting a B2B platform for complex sales campaigns configuration.',
+        'Improved the development team’s feature delivery rate by fostering continuous delivery best practices.',
       ],
       technologies:
-        'AWS (Lambda, S3, EC2, ECS, IAM, DynamoDB), Terraform, Docker, Keycloak, Python, Java, Node.js, TypeScript',
+        'AWS, Java, Python, TypeScript, Terraform, Docker, Keycloak, Bottle, React, CircleCI, New Relic, OpenID, OAuth.',
       logo: '/images/logos/yandeh.png',
     },
     {
@@ -191,13 +179,11 @@ export const contentData: ContentContextType = {
       endDate: 'AUG 2018',
       organization: 'Hub Fintech',
       jobRole: 'Senior Software Engineer',
-      description:
-        'Developed core components for credit card processing platform and digital banking solutions.',
-      detailsTitle: 'Key Achievements:',
       details: [
-        'Developed ISO 8583 compliant transaction processing systems, handling thousands of daily transactions',
+        'Enhanced security and compliance of ISO 8583 payment processing platform by creating a fraud detection module.',
+        'Facilitated fund transfers of a digital banking client by implementing an account linking feature.',
       ],
-      technologies: 'Java, RabbitMQ, Angular, MySQL, JUnit',
+      technologies: 'Java, RabbitMQ, Angular, MySQL, JUnit, Hystrix, Jenkins.',
       logo: '/images/logos/hub-fintech.png',
     },
     {
@@ -205,15 +191,11 @@ export const contentData: ContentContextType = {
       endDate: 'Aug 2017',
       organization: 'Algar Telecom',
       jobRole: 'Senior Software Engineer',
-      description:
-        'Progressed from junior to senior developer, contributing to diverse OSS/BSS telecom projects.',
-      detailsTitle: 'Key Achievements:',
       details: [
-        'Engineered an inter-system communication service, reducing data transfer errors',
-        'Enhanced and customized modules for a complex billing system',
-        'Led a bus location tracking project using Raspberry Pi',
+        'Developed multiple core applications for OSS/BSS telecom systems, streamlining operations.',
       ],
-      technologies: 'Java, Spring, Angular, PostgreSQL, Oracle, Docker, REST, SOAP',
+      technologies:
+        'Java, JavaScript, Spring, JavaEE, WildFly, Angular, PostgreSQL, Docker, REST, SOAP, Hystrix, Hazelcast, Jenkins.',
       logo: '/images/logos/algar-telecom.png',
     },
     {
@@ -221,8 +203,10 @@ export const contentData: ContentContextType = {
       endDate: 'SEP 2012',
       organization: 'Kyros Tecnologia',
       jobRole: 'Intern',
-      description: 'Worked on an outsourced team, developing new modules of a billing system.',
-      technologies: 'Oracle, SQL, Shell script',
+      details: [
+        'Contributed to new and existing custom modules of a complex billing system (Comverse ONE).',
+      ],
+      technologies: 'Python, PL/SQL, Shell script.',
       logo: '/images/logos/kyros-tecnologia.png',
     },
   ],

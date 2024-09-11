@@ -12,7 +12,7 @@ const WithDownloadCVButton: React.FC = () => {
   return (
     cvFile && (
       <button
-        onClick={() => handleDownload('Resume_Pedro_Duarte.pdf', '/pdfs/resume.pdf')}
+        onClick={() => handleDownload(cvFile.fileName, cvFile.fileUrl)}
         className='flex items-center justify-center gap-1 rounded-md border border-zinc-200 p-4 dark:border-zinc-700'
       >
         <Download size={16} />
