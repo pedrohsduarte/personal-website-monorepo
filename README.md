@@ -1,12 +1,11 @@
-This repository contains the source code for my personal website: [https://pedroduarte.tech/](https://pedroduarte.tech/). It is a monorepo that contains a single app (for now) that is a Next.js app. Turborepo is used to manage the monorepo. The app is hosted on AWS Amplify.
+This repository contains the source code for my personal website: [https://pedroduarte.tech/](https://pedroduarte.tech/). It is a monorepo with a single app (for now) that is a Next.js app. Turborepo is used to manage the monorepo. The app is hosted on AWS Amplify.
 
 Feel free to fork this repository and use it as a template for your own website. If you do, please consider starring this repository. The content can be easily changed by editing specific files, as described below.
 
 # Requirements
 
-- Node.js (20+)
-- Yarn
-- Docker (optional)
+- Node.js (20+) or Docker
+- Yarn (if not using Docker)
 - AWS account (optional)
 
 # Getting Started
@@ -14,7 +13,7 @@ Feel free to fork this repository and use it as a template for your own website.
 ## Development
 
 1. After cloning the repository, run `yarn install` to install the dependencies.
-2. Run `yarn dev` to start the development server, or `yarn dev:docker` to start the development server using Docker. The app will be available at [http://localhost:3000](http://localhost:3000). Hot reloading is enabled.
+2. Run `yarn dev` or `yarn dev:docker` to start the development server. The app will be available at [http://localhost:3000](http://localhost:3000). Hot reloading is enabled.
 
 ## Deployment (AWS Amplify)
 
@@ -35,8 +34,6 @@ Feel free to fork this repository and use it as a template for your own website.
 8. Review and deploy. Every commit to the main branch will trigger a new deployment.
 
 # Customization
-
-## Content
 
 The content of the website can be easily changed by editing the following files:
 
