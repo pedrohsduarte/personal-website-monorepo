@@ -192,7 +192,7 @@ export const contentData: ContentContextType = {
       startDate: 'JUN 2011',
       endDate: 'SEP 2012',
       organization: 'Kyros Tecnologia',
-      jobRole: 'Intern',
+      jobRole: 'Software Developer',
       details: [
         'Contributed to new and existing custom modules of a complex billing system (Comverse ONE).',
       ],
