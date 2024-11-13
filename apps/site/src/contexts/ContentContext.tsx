@@ -138,7 +138,7 @@ export const contentData: ContentContextType = {
     },
     {
       startDate: 'JUL 2020',
-      endDate: 'MAR 2022',
+      endDate: 'MAR 2023',
       organization: 'Exacode',
       jobRole: 'Software Architect',
       details: [
