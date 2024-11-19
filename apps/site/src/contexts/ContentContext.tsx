@@ -133,7 +133,7 @@ export const contentData: ContentContextType = {
         'Enhanced data security and compliance by migrating core legacy Azure infrastructure to a private network topology.',
       ],
       technologies:
-        'Azure, AWS, TypeScript, Spark, Delta Lake, PostgreSQL, Docker, Terraform, GraphQL.',
+        'Azure, AWS, TypeScript, Spark, Delta Lake, PostgreSQL, Docker, Terraform, GraphQL, Prisma, Log Analytics, Azure Monitor.',
       logo: '/images/logos/entrustody.png',
     },
     {
@@ -147,7 +147,7 @@ export const contentData: ContentContextType = {
         'Developed business system for a Fortune 500 client, accelerating deal closure velocity by 40%.',
       ],
       technologies:
-        'AWS, GCP, Firebase, Java, Python, TypeScript, Terraform, React, Tailwind, Flutter, Redis.',
+        'AWS, GCP, Firebase, Java, Spring, Python, Node.js, TypeScript, Terraform, React, Tailwind, Flutter, Redis, CloudWatch, Crashlytics.',
       logo: '/images/logos/exacode.png',
     },
     {
@@ -161,7 +161,7 @@ export const contentData: ContentContextType = {
         'Improved the development team’s feature delivery rate by fostering continuous delivery best practices.',
       ],
       technologies:
-        'AWS, Java, Python, TypeScript, Terraform, Docker, Keycloak, Bottle, React, CircleCI, New Relic, OpenID, OAuth.',
+        'AWS, Java, Python, Node.js, TypeScript, Terraform, Docker, Keycloak, Flask, React, CircleCI, New Relic, OpenID, OAuth, Kibana.',
       logo: '/images/logos/yandeh.png',
     },
     {
