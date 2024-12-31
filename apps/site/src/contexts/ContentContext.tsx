@@ -210,6 +210,14 @@ export const contentData: ContentContextType = {
   ],
   certifications: [
     {
+      title: 'AWS Certified Solutions Architect - Associate',
+      issuer: 'AWS',
+      date: 'Dec 2024',
+      logo: '/images/logos/aws-saa-c03.png',
+      verificationLink:
+        'https://cp.certmetrics.com/amazon/en/public/verify/credential/468c592088af47499d4760f95aad876b',
+    },
+    {
       title: 'Exam Certificate: ITIL® Foundation Certificate in IT Service Management (ITILF)',
       issuer: 'EXIN',
       date: 'Jul 2013',
